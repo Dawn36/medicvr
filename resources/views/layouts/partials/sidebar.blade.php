@@ -1,7 +1,7 @@
 <aside class="left-sidebar" data-sidebarbg="skin6">
     <!-- Sidebar scroll-->
     <div class="scroll-sidebar">
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand" href="{{route('dashboard')}}">
             <!-- Logo text -->
             <span class="logo-text">
                 <!-- dark Logo text -->
@@ -14,7 +14,7 @@
             <ul id="sidebarnav">
                 <!-- User Profile-->
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php" aria-expanded="false">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('dashboard')}}" aria-expanded="false">
                         <img src="{{ asset('theme/assets/imges/dashboard-icon.svg')}}" class="sidebar-icon" alt="">
                         <span class="hide-menu">{{__('sidebar.dashboard')}}</span>
                     </a>
