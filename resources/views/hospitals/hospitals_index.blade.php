@@ -16,7 +16,7 @@
                 </div>
                 <div class="gernal-info bg-white">
                     <div class="block">
-                        <div class="table-responsive" style="padding-top:28px;">
+                        <div class="table-responsive" style="padding-top:28px">
                             <table class="table no-wrap" id="myTable">
                                 <thead>
                                     <tr style="background: #F9F9FA; border-radius: 6px;">
@@ -36,7 +36,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @for ($i = 0; $i < count($hospitals); $i++) @php $a=$i; $a++ @endphp;
+                                    @for ($i = 0; $i < count($hospitals); $i++) @php $a=$i; $a++ @endphp
                                     <tr>
                                         <td>{{$a}}</td>
                                         <td class="txt-oflo"><a href="{{route('hospitals.show',$hospitals[$i]->id)}}" class="fw-bolder text-theme">{{ucwords($hospitals[$i]->hospital_name)}}</a></td>

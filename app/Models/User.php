@@ -7,12 +7,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laratrust\Traits\LaratrustUserTrait;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Hospitals;
 
 class User extends Authenticatable
 {
     use LaratrustUserTrait;
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable,SoftDeletes;
 
     /**
      * The attributes that are mass assignable.

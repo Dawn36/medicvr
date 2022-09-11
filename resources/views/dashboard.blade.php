@@ -13,7 +13,7 @@
             <div class="col-lg-3 col-md-12">
                 <div class="white-box analytics-info">
                     <div class="d-flex">
-                        <img src="./assets/imges/hospital.svg" class="sidebar-icon custom-widgets-icon" alt="">
+                        <img src="{{ asset('theme/assets/imges/hospital.svg')}}" class="sidebar-icon custom-widgets-icon" alt="">
                         <p class="box-title mb-0">Total Hospitals</p>
                     </div>
                     <div class="box-data">
@@ -24,7 +24,7 @@
             <div class="col-lg-3 col-md-12">
                 <div class="white-box analytics-info">
                     <div class="d-flex">
-                        <img src="./assets/imges/sessions.svg" class="sidebar-icon custom-widgets-icon" alt="">
+                        <img src="{{ asset('theme/assets/imges/sessions.svg')}}" class="sidebar-icon custom-widgets-icon" alt="">
                         <p class="box-title mb-0">Total Sessions Played</p>
                     </div>
                     <div class="box-data">
@@ -70,7 +70,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex justify-content-center align-items-center my-3">
-                            <img src="./assets/imges/hospital3.png" class="img-fluid" width="6%" alt="">
+                            <img src="{{ asset('theme/assets/imges/hospital3.png')}}" class="img-fluid" width="6%" alt="">
                             <h3 class="mx-1 my-3 fw-bolder fs-7 text-center">Tel Aviv Clinic</h3>
                         </div>
                         <!-- Start: Stats -->
@@ -78,7 +78,7 @@
                             <div class="col">
                                 <div class="white-box analytics-info">
                                     <div class="d-flex">
-                                        <img src="./assets/imges/hospital.svg" class="sidebar-icon custom-widgets-icon" alt="">
+                                        <img src="{{ asset('theme/assets/imges/hospital.svg')}}" class="sidebar-icon custom-widgets-icon" alt="">
                                         <p class="box-title mb-0">Sessions Played</p>
                                     </div>
                                     <div class="box-data">
@@ -89,7 +89,7 @@
                             <div class="col">
                                 <div class="white-box analytics-info">
                                     <div class="d-flex">
-                                        <img src="./assets/imges/hospital.svg" class="sidebar-icon custom-widgets-icon" alt="">
+                                        <img src="{{ asset('theme/assets/imges/hospital.svg')}}" class="sidebar-icon custom-widgets-icon" alt="">
                                         <p class="box-title mb-0">Hours Played</p>
                                     </div>
                                     <div class="box-data">
@@ -100,7 +100,7 @@
                             <div class="col">
                                 <div class="white-box analytics-info">
                                     <div class="d-flex">
-                                        <img src="./assets/imges/hospital.svg" class="sidebar-icon custom-widgets-icon" alt="">
+                                        <img src="{{ asset('theme/assets/imges/hospital.svg')}}" class="sidebar-icon custom-widgets-icon" alt="">
                                         <p class="box-title mb-0">Number of Admins</p>
                                     </div>
                                     <div class="box-data">
@@ -111,7 +111,7 @@
                             <div class="col">
                                 <div class="white-box analytics-info">
                                     <div class="d-flex">
-                                        <img src="./assets/imges/hospital.svg" class="sidebar-icon custom-widgets-icon" alt="">
+                                        <img src="{{ asset('theme/assets/imges/hospital.svg')}}" class="sidebar-icon custom-widgets-icon" alt="">
                                         <p class="box-title mb-0">Number of Teachers</p>
                                     </div>
                                     <div class="box-data">
@@ -122,7 +122,7 @@
                             <div class="col">
                                 <div class="white-box analytics-info">
                                     <div class="d-flex">
-                                        <img src="./assets/imges/hospital.svg" class="sidebar-icon custom-widgets-icon" alt="">
+                                        <img src="{{ asset('theme/assets/imges/hospital.svg')}}" class="sidebar-icon custom-widgets-icon" alt="">
                                         <p class="box-title mb-0">Number of Students</p>
                                     </div>
                                     <div class="box-data">
@@ -139,7 +139,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex justify-content-center align-items-center my-3">
-                            <img src="./assets/imges/hospital1.png" class="img-fluid" width="6%" alt="">
+                            <img src="{{ asset('theme/assets/imges/hospital1.png')}}" class="img-fluid" width="6%" alt="">
                             <h3 class="mx-1 my-3 fw-bolder fs-7 text-center">St. Joseph's Hospital</h3>
                         </div>
                         <!-- Start: Stats -->
@@ -147,7 +147,7 @@
                             <div class="col">
                                 <div class="white-box analytics-info">
                                     <div class="d-flex">
-                                        <img src="./assets/imges/hospital.svg" class="sidebar-icon custom-widgets-icon" alt="">
+                                        <img src="{{ asset('theme/assets/imges/hospital.svg')}}" class="sidebar-icon custom-widgets-icon" alt="">
                                         <p class="box-title mb-0">Sessions Played</p>
                                     </div>
                                     <div class="box-data">
@@ -158,7 +158,7 @@
                             <div class="col">
                                 <div class="white-box analytics-info">
                                     <div class="d-flex">
-                                        <img src="./assets/imges/hospital.svg" class="sidebar-icon custom-widgets-icon" alt="">
+                                        <img src="{{ asset('theme/assets/imges/hospital.svg')}}" class="sidebar-icon custom-widgets-icon" alt="">
                                         <p class="box-title mb-0">Hours Played</p>
                                     </div>
                                     <div class="box-data">
@@ -169,7 +169,7 @@
                             <div class="col">
                                 <div class="white-box analytics-info">
                                     <div class="d-flex">
-                                        <img src="./assets/imges/hospital.svg" class="sidebar-icon custom-widgets-icon" alt="">
+                                        <img src="{{ asset('theme/assets/imges/hospital.svg')}}" class="sidebar-icon custom-widgets-icon" alt="">
                                         <p class="box-title mb-0">Number of Admins</p>
                                     </div>
                                     <div class="box-data">
@@ -180,7 +180,7 @@
                             <div class="col">
                                 <div class="white-box analytics-info">
                                     <div class="d-flex">
-                                        <img src="./assets/imges/hospital.svg" class="sidebar-icon custom-widgets-icon" alt="">
+                                        <img src="{{ asset('theme/assets/imges/hospital.svg')}}" class="sidebar-icon custom-widgets-icon" alt="">
                                         <p class="box-title mb-0">Number of Teachers</p>
                                     </div>
                                     <div class="box-data">
@@ -191,7 +191,7 @@
                             <div class="col">
                                 <div class="white-box analytics-info">
                                     <div class="d-flex">
-                                        <img src="./assets/imges/hospital.svg" class="sidebar-icon custom-widgets-icon" alt="">
+                                        <img src="{{ asset('theme/assets/imges/hospital.svg')}}" class="sidebar-icon custom-widgets-icon" alt="">
                                         <p class="box-title mb-0">Number of Students</p>
                                     </div>
                                     <div class="box-data">
@@ -259,7 +259,7 @@
                                     <td>03-445</td>
                                     <td class="txt-oflo">Kristin</td>
                                     <td>Stewart</td>
-                                    <td class="txt-oflo"><img src="./assets/imges/Gendar.png" alt=""></td>
+                                    <td class="txt-oflo"><img src="{{ asset('theme/assets/imges/Gendar.png')}}" alt=""></td>
                                     <td>(907) 555-0101</td>
                                     <td>oevans@icloud.com</td>
                                     <td>Tel Aviv</td>
@@ -285,7 +285,7 @@
                                     <td>03-445</td>
                                     <td class="txt-oflo">Kristin</td>
                                     <td>Lane</td>
-                                    <td class="txt-oflo"><img src="./assets/imges/Gendar.png" alt=""></td>
+                                    <td class="txt-oflo"><img src="{{ asset('theme/assets/imges/Gendar.png')}}" alt=""></td>
                                     <td>(907) 555-0101</td>
                                     <td>oevans@icloud.com</td>
                                     <td>Tel Aviv</td>
@@ -311,7 +311,7 @@
                                     <td>03-445</td>
                                     <td class="txt-oflo">Kristin</td>
                                     <td>Lane</td>
-                                    <td class="txt-oflo"><img src="./assets/imges/Gendar.png" alt=""></td>
+                                    <td class="txt-oflo"><img src="{{ asset('theme/assets/imges/Gendar.png')}}" alt=""></td>
                                     <td>(907) 555-0101</td>
                                     <td>oevans@icloud.com</td>
                                     <td>Tel Aviv</td>
@@ -337,7 +337,7 @@
                                     <td>03-445</td>
                                     <td class="txt-oflo">Kristin</td>
                                     <td>Lane</td>
-                                    <td class="txt-oflo"><img src="./assets/imges/Gendar.png" alt=""></td>
+                                    <td class="txt-oflo"><img src="{{ asset('theme/assets/imges/Gendar.png')}}" alt=""></td>
                                     <td>(907) 555-0101</td>
                                     <td>oevans@icloud.com</td>
                                     <td>Tel Aviv</td>

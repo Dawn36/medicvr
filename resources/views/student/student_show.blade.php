@@ -27,7 +27,7 @@
                     <form style="display: inline-block" id='delete_student' method="POST" action="{{ route('user.destroy', $student->id) }}">
                         @method('DELETE')
                         @csrf
-                        <a href="{{ route('user.destroy', $student->id) }}" onclick="event.preventDefault(); document.getElementById('delete_teacher').submit();" class="btn btn-save d-flex align-items-center gap-2"><i class="fas fa-trash"></i> Delete teacher</a>
+                        <a href="{{ route('user.destroy', $student->id) }}" onclick="event.preventDefault(); document.getElementById('delete_teacher').submit();" class="btn btn-save d-flex align-items-center gap-2"><i class="fas fa-trash"></i> Delete Student</a>
                     </form>
                 </div>
             </div>

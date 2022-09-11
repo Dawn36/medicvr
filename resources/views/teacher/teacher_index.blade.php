@@ -38,7 +38,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @for ($i = 0; $i < count($teacher); $i++) @php $a=$i; $a++ @endphp;
+                                    @for ($i = 0; $i < count($teacher); $i++) @php $a=$i; $a++ @endphp
                                     <tr>
                                         <td>{{$a}}</td>
                                         <td class="txt-oflo">

@@ -35,7 +35,8 @@ class UserController extends Controller
         }
         if($status == 'superadmin')
         {
-            $superadmin = User::whereRoleIs($status)->get();
+            $userId=Auth::user()->id;
+            $superadmin = User::whereRoleIs($status)->where('id','!=',$userId)->get();
             return view('superadmin/superadmin_index', compact('superadmin'));
         }
     }
@@ -118,7 +119,7 @@ class UserController extends Controller
         $user->attachRole($request->role_id);
 
       
-        return redirect()->back();
+        return $this->redirectAfterAction($roleId);
     }
 
     /**
@@ -264,7 +265,8 @@ class UserController extends Controller
         $user['updated_at'] =  date("Y-m-d");
         $user->save();
 
-        return redirect()->back();
+        return $this->redirectAfterAction($roleId);
+        
     }
 
     /**
@@ -276,10 +278,29 @@ class UserController extends Controller
     public function destroy($id)
     {
         $data = User::find($id);
+        $roleId= $data->user_type;
         $data->delete();
-        return redirect()->back();
+        return $this->redirectAfterAction($roleId);
     }
   
-    
+    private function redirectAfterAction($roleId)
+    {
+        if($roleId == 'admin')
+        {
+            return redirect()->route('admin','admin');
+        }
+        if( $roleId == 'student')
+        {
+            return redirect()->route('student','student');
+        }
+       if( $roleId == 'teacher')
+       {
+         return redirect()->route('teacher','teacher');
+       }
+       if( $roleId == 'superadmin')
+       {
+         return redirect()->route('superadmin','superadmin');
+       }
+    }
     
 }
