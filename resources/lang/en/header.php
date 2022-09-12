@@ -6,6 +6,8 @@ return [
     'admin' => 'Admin',
     'teacher' => 'Teacher',
     'student' => 'Student',
+    'department' => 'Department',
+    'scenario' => 'Scenario',
     'superadmin' => 'Super Admin',
     'searchplaceholder' => 'Search for the guide guidest people',
     'settings' => 'Settings',

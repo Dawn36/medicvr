@@ -57,6 +57,8 @@
                                 {{ Route::currentRouteName() == 'teacher' || Route::currentRouteName() == 'teacher_show' || Route::currentRouteName() == 'teacher_edit' || Route::currentRouteName() == 'teacher_create'  ? __('header.teacher') : '' }} 
                                 {{ Route::currentRouteName() == 'student' || Route::currentRouteName() == 'student_show' || Route::currentRouteName() == 'student_edit' || Route::currentRouteName() == 'student_create'  ? __('header.student') : '' }} 
                                 {{ Route::currentRouteName() == 'superadmin' || Route::currentRouteName() == 'superadmin_show' || Route::currentRouteName() == 'superadmin_edit' || Route::currentRouteName() == 'superadmin_create'  ? __('header.superadmin') : '' }} 
+                                {{ Route::currentRouteName() == 'department.index' || Route::currentRouteName() == 'department.show' || Route::currentRouteName() == 'department.edit' || Route::currentRouteName() == 'department.create'  ? __('header.department') : '' }} 
+                                {{ Route::currentRouteName() == 'scenario.index' || Route::currentRouteName() == 'scenario.show' || Route::currentRouteName() == 'scenario.edit' || Route::currentRouteName() == 'scenario.create'  ? __('header.scenario') : '' }} 
                                 {{ Route::currentRouteName() == 'settings.create' ? 'Settings' : '' }} 
                               
                             </h4>

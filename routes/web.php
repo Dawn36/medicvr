@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\HospitalsController;
 Use App\Http\Controllers\UserController;
+use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\ScenarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +29,8 @@ Route::get('/dashboard', function () {
 Route::resource('settings', SettingsController::class);
 Route::resource('user', UserController::class);
 Route::resource('hospitals', HospitalsController::class);
+Route::resource('department', DepartmentController::class);
+Route::resource('scenario', ScenarioController::class);
 // Admin
 Route::Get('admin/{status}', [UserController::class, 'index'])->name('admin');
 Route::Get('admin_create/{status}', [UserController::class, 'create'])->name('admin_create');

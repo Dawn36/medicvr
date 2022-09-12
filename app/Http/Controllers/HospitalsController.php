@@ -82,7 +82,8 @@ class HospitalsController extends Controller
             'created_at' => date("Y-m-d h:i:s"),
             'created_by' => $userId,
         ]);
-        return redirect()->back();
+        return redirect()->route('hospitals.index');
+
 
     }
 
@@ -165,7 +166,7 @@ class HospitalsController extends Controller
         $hospital['updated_at'] = date("Y-m-d");
         $hospital->save();
 
-        return redirect()->back();
+        return redirect()->route('hospitals.index');
     }
 
     /**

@@ -8,6 +8,7 @@ return [
     'student' => 'Student',
     'superadmin' => 'Super Admin',
     'scenarios' => 'Scenarios',
+    'department' => 'Department',
     'setting' => 'Setting',
     'logout' => 'Logout',
     
