@@ -35,6 +35,14 @@
                     <div class="block">
                         <div class="row pb-2">
                             <div class="col-md-6 pb-2">
+                                <label class="fw-bold">Scenario Id<span class="required">*</span></label>
+                                <p class="text-dark">{{$scenario[0]->sce_id}}</p>
+                            </div>
+                            <div class="col-md-6 pb-2">
+                                <label class="fw-bold">Scenario logo</label>
+                                <p><img class="img-fluid" width="70px" src="{{ asset($scenario[0]->path)}}" alt=""></p>
+                            </div>
+                            <div class="col-md-6 pb-2">
                                 <label class="fw-bold">Department Name<span class="required">*</span></label>
                                 <p class="text-dark">{{ucwords($scenario[0]->name)}}</p>
                             </div>
@@ -42,10 +50,7 @@
                                 <label class="fw-bold">Department logo</label>
                                 <p><img class="img-fluid" width="70px" src="{{ asset($scenario[0]->d_path)}}" alt=""></p>
                             </div>
-                            <div class="col-md-6 pb-2">
-                                <label class="fw-bold">Scenario logo</label>
-                                <p><img class="img-fluid" width="70px" src="{{ asset($scenario[0]->path)}}" alt=""></p>
-                            </div>
+                           
                         </div>
                     </div>
                 </div>

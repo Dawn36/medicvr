@@ -175,7 +175,7 @@
                                     <div class="executions">
                                         <div class="executions-wrapper">
                                             <div class="icone-wrapper">
-                                                <img src="{{ asset('theme/assets/imges/book.svg" class="img-fluid')}}" alt="">
+                                                <img src="{{ asset('theme/assets/imges/book.svg')}}" class="img-fluid" alt="">
                                             </div>
                                             <div>
                                                 <small>Number of executions</small>
@@ -186,7 +186,7 @@
                                     <div class="executions">
                                         <div class="executions-wrapper">
                                             <div class="icone-wrapper">
-                                                <img src="{{ asset('theme/assets/imges/award.svg" class="img-fluid')}}" alt="">
+                                                <img src="{{ asset('theme/assets/imges/award.svg')}}" class="img-fluid" alt="">
                                             </div>
                                             <div>
                                                 <small>Best Score</small>
@@ -197,7 +197,7 @@
                                     <div class="executions">
                                         <div class="executions-wrapper">
                                             <div class="icone-wrapper">
-                                                <img src="{{ asset('theme/assets/imges/calculator.svg" class="img-fluid')}}" alt="">
+                                                <img src="{{ asset('theme/assets/imges/calculator.svg')}}" class="img-fluid" alt="">
                                             </div>
                                             <div>
                                                 <small>Average Score</small>
