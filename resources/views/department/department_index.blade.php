@@ -11,7 +11,7 @@
                     <h4 class="heading mb-0">Department List</h4>
                     <div class="btn-wrapper d-flex gap-2">
                         <!-- <button class="btn btn-print bg-white d-flex align-items-center gap-2"><img src="./assets/imges/print.svg" alt=""> Print</button> -->
-                        <a href="{{route('department.create')}}" class="btn btn-save d-flex align-items-center gap-2"><img src="{{ asset('theme/assets/imges/hospital.svg')}}" width="25px" alt="">Add Department</a>
+                        <a href="{{route('department.create')}}" class="btn btn-save d-flex align-items-center gap-2"><img src="{{ asset('theme/assets/imges/department.svg')}}" width="25px" alt="">Add Department</a>
                     </div>
                 </div>
                 <div class="gernal-info bg-white">

@@ -62,7 +62,7 @@
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('department.index')}}" aria-expanded="false">
-                        <img src="{{ asset('theme/assets/imges/scene.svg')}}" class="sidebar-icon" alt="">
+                        <img src="{{ asset('theme/assets/imges/department.svg')}}" class="sidebar-icon" alt="">
                         <span class="hide-menu">{{__('sidebar.department')}}</span>
                     </a>
                     <div class="ative-tab"></div>

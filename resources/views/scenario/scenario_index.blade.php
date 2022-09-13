@@ -19,6 +19,9 @@
                                 <thead>
                                     <tr style="background: #F9F9FA; border-radius: 6px;">
                                         <th class="border-top-0">
+                                             ID
+                                        </th>
+                                        <th class="border-top-0">
                                             Scenario ID
                                         </th>
                                        
@@ -36,6 +39,7 @@
                                 <tbody>
                                     @for ($i = 0; $i < count($scenario); $i++) @php $a=$i; $a++ @endphp
                                     <tr>
+                                        <td>{{$a}}</td>
                                         <td>{{$scenario[$i]->sce_id}}</td>
                                         <td class="txt-oflo"><a href="{{route('scenario.show',$scenario[$i]->id)}}" class="fw-bolder text-theme">{{ucwords($scenario[$i]->secnario_name)}}</a></td>
                                         <td >{{ucwords($scenario[$i]->name)}}</td>
