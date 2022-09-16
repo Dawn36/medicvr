@@ -41,6 +41,7 @@ class Dashboard extends Model
         `hospitals` h 
         LEFT JOIN `game_session` gs 
           ON h.`id` = gs.`hospitals_id`
+        where h.`deleted_at` IS NULL 
           
       GROUP BY h.`id` "));
         for($i=1; $i <= date('t'); $i++)
