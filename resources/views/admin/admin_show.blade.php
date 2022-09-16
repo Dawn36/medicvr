@@ -11,11 +11,11 @@
                     <h4 class="heading mb-0">Admin Details</h4>
                     <div class="btn-wrapper d-flex gap-2">
                         <a href="{{route('admin_edit',['status'=>'admin','userId'=>$admin->id])}}" class="btn btn-print bg-white d-flex align-items-center gap-2"><i class="fas fa-pen"></i> Edit</a>
-                        <form style="display: inline-block" id='delete_admin' method="POST" action="{{ route('user.destroy', $admin->id) }}">
+                        {{-- <form style="display: inline-block" id='delete_admin' method="POST" action="{{ route('user.destroy', $admin->id) }}">
                             @method('DELETE')
                             @csrf
                             <a href="{{ route('user.destroy', $admin->id) }}" onclick="event.preventDefault(); document.getElementById('delete_admin').submit();" class="btn btn-save d-flex align-items-center gap-2"><i class="fas fa-trash"></i> Delete Admin</a>
-                        </form>
+                        </form> --}}
                     </div>
                 </div>
                 <div class="gernal-info bg-white">

@@ -12,11 +12,11 @@
                     <div class="btn-wrapper d-flex gap-2">
                         <a href="{{route('hospitals.edit',$hospital->id)}}" class="btn btn-print bg-white d-flex align-items-center gap-2"><i class="fas fa-pen"></i> Edit</a>
                         
-                        <form style="display: inline-block" id='delete_hospital' method="POST" action="{{ route('hospitals.destroy', $hospital->id) }}">
+                        {{-- <form style="display: inline-block" id='delete_hospital' method="POST" action="{{ route('hospitals.destroy', $hospital->id) }}">
                             @method('DELETE')
                             @csrf
                             <a href="{{ route('hospitals.destroy', $hospital->id) }}" onclick="event.preventDefault(); document.getElementById('delete_hospital').submit();" class="btn btn-save d-flex align-items-center gap-2"><i class="fas fa-trash"></i> Delete Hospital</a>
-                        </form>
+                        </form> --}}
                     </div>
                 </div>
                 <div class="accordion" id="accordionExample">
