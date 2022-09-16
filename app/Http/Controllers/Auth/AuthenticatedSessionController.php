@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
+use App\Models\Hospitals;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 
 class AuthenticatedSessionController extends Controller
@@ -31,7 +33,14 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
-
+        if(!Auth::user()->hasRole('superadmin'))
+        {
+            $hospitalsId=Auth::user()->hospitals_id;
+            $hospital=Hospitals::find($hospitalsId);
+            Session::put('hospital', $hospital);
+            $hospital= Session::get('hospital');
+        }
+        
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 
@@ -44,7 +53,7 @@ class AuthenticatedSessionController extends Controller
     public function destroy(Request $request)
     {
         Auth::guard('web')->logout();
-
+        Session::flush();
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();

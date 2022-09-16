@@ -6,6 +6,7 @@ use App\Http\Controllers\HospitalsController;
 Use App\Http\Controllers\UserController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\ScenarioController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,9 +23,10 @@ Route::get('/', function () {
     return redirect()->route('login');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
+Route::Get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::resource('settings', SettingsController::class);
 Route::resource('user', UserController::class);
@@ -47,6 +49,8 @@ Route::Get('student/{status}', [UserController::class, 'index'])->name('student'
 Route::Get('student_create/{status}', [UserController::class, 'create'])->name('student_create');
 Route::Get('student_edit/{status}/{userId}', [UserController::class, 'edit'])->name('student_edit');
 Route::Post('student_show', [UserController::class, 'show'])->name('student_show');
+Route::Get('student_session_details/{id}', [UserController::class, 'studentSessionDetails'])->name('student_session_details');
+
 
 //Student
 Route::Get('superadmin/{status}', [UserController::class, 'index'])->name('superadmin');

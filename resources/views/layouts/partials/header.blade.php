@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+    @php 
+     $primaryColor="";
+     $secondaryColor="";
+     if(!Auth::user()->hasRole('superadmin') )
+        {
+        $hospitalSession= Session::get('hospital');
+        $primaryColor = $hospitalSession->primary_color;
+        $secondaryColor = $hospitalSession->secondary_color;
+        }
+    @endphp
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +20,11 @@
     <meta name="robots" content="noindex,nofollow">
     <title>{{__('header.title')}}</title>
     <!-- Favicon icon -->
+    @if(!Auth::user()->hasRole('superadmin'))
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset($hospitalSession->hospital_small_logo)}}">
+    @else
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('theme/assets/imges/sm-logo.jpeg')}}">
+    @endif
     <!-- Custom CSS -->
     <link href="plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
@@ -23,6 +37,76 @@
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 </head>
 
+
+<style>
+    /* Secondary Color */
+
+    .page-link {
+        color: {{$secondaryColor}};
+    }
+
+    .page-link:hover {
+        color: {{$secondaryColor}};
+    }
+
+    .page-link:focus {
+        color: {{$secondaryColor}};
+    }
+
+    .page-item.active .page-link {
+        background-color: {{$secondaryColor}};
+        border-color: {{$secondaryColor}};
+    }
+
+    .text-theme {
+        color: {{$secondaryColor}} !important
+    }
+
+    .forms-tabs .nav-link.active {
+        background-color: {{$secondaryColor}};
+    }
+
+    .btn-save {
+        background-color: {{$secondaryColor}};
+    }
+
+    .btn.btn-light-success {
+        color: {{$secondaryColor}};
+        background-color: {{$secondaryColor}}1c;
+    }
+
+    .btn.btn-light-success:hover:not(.btn-text):not(:disabled):not(.disabled),
+    .btn.btn-light-success:focus:not(.btn-text),
+    .btn.btn-light-success.focus:not(.btn-text) {
+        background-color: {{$secondaryColor}};
+    }
+
+    /* Primary Color */
+
+    .gernal-info input:focus {
+        border-color: {{$primaryColor}};
+        outline: 1px solid {{$primaryColor}};
+    }
+
+    .navbar-brand {
+        background-color: {{$primaryColor}};
+    }
+
+    #main-wrapper[data-layout=horizontal] .left-sidebar[data-sidebarbg=skin6],
+    #main-wrapper[data-layout=vertical] .left-sidebar[data-sidebarbg=skin6] {
+        background: {{$primaryColor}};
+    }
+
+    #main-wrapper[data-layout=horizontal] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul,
+    #main-wrapper[data-layout=vertical] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul {
+        background: {{$primaryColor}};
+    }
+    .dropdown-item.active, .dropdown-item:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: {{$primaryColor}} ;
+}
+</style>
 
 <body>
     <!-- Preloader - style you can find in spinners.css -->
@@ -60,6 +144,8 @@
                                 {{ Route::currentRouteName() == 'department.index' || Route::currentRouteName() == 'department.show' || Route::currentRouteName() == 'department.edit' || Route::currentRouteName() == 'department.create'  ? __('header.department') : '' }} 
                                 {{ Route::currentRouteName() == 'scenario.index' || Route::currentRouteName() == 'scenario.show' || Route::currentRouteName() == 'scenario.edit' || Route::currentRouteName() == 'scenario.create'  ? __('header.scenario') : '' }} 
                                 {{ Route::currentRouteName() == 'settings.create' ? 'Settings' : '' }} 
+                                {{ Route::currentRouteName() == 'student_session_details' ? 'Session Details' : '' }} 
+                                {{ Route::currentRouteName() == 'dashboard' ? 'Dashboard' : '' }} 
                               
                             </h4>
                            

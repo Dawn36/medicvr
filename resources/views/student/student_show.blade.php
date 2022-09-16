@@ -8,7 +8,6 @@
     }
 </style>
 
-
 <div class="page-wrapper">
     <!-- Start::Container fluid  -->
     <div class="container-fluid">
@@ -21,6 +20,7 @@
                     <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Scenarios</button>
                 </li>
             </ul>
+            @if(!Auth::user()->hasRole('student'))
             <div class="d-flex align-items-center justify-content-between py-4 nav-tab-heading">
                 <div class="btn-wrapper d-flex gap-2">
                     <a href="{{route('student_edit',['status'=>'student','userId'=>$student->id])}}" class="btn btn-print bg-white d-flex align-items-center gap-2"><i class="fas fa-pen"></i> Edit</a>
@@ -31,6 +31,7 @@
                     </form>
                 </div>
             </div>
+            @endif
         </div>
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
@@ -159,90 +160,36 @@
                 </div>
             </div>
             <div class="tab-pane fade covid" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                <div class="accordion" id="accordionExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#" aria-expanded="true" aria-controls="collapseOne">
-                                <div>
-                                    <small>Scenrio Name</small>
-                                    <h1 class="title">COVID <img src="{{ asset('theme/assets/imges/fi_edit.svg')}}" alt=""></h1>
-                                </div>
-                            </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <div class="covid-reports">
-                                    <div class="executions">
-                                        <div class="executions-wrapper">
-                                            <div class="icone-wrapper">
-                                                <img src="{{ asset('theme/assets/imges/book.svg')}}" class="img-fluid" alt="">
-                                            </div>
-                                            <div>
-                                                <small>Number of executions</small>
-                                                <h1>54</h1>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="executions">
-                                        <div class="executions-wrapper">
-                                            <div class="icone-wrapper">
-                                                <img src="{{ asset('theme/assets/imges/award.svg')}}" class="img-fluid" alt="">
-                                            </div>
-                                            <div>
-                                                <small>Best Score</small>
-                                                <h1>54</h1>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="executions">
-                                        <div class="executions-wrapper">
-                                            <div class="icone-wrapper">
-                                                <img src="{{ asset('theme/assets/imges/calculator.svg')}}" class="img-fluid" alt="">
-                                            </div>
-                                            <div>
-                                                <small>Average Score</small>
-                                                <h1>54</h1>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="gernal-info bg-white">
+                    <div class="block">
+                        <div class="d-flex justify-content-between">
+                            <h3 class="heading">Sessions</h3>
                         </div>
-                    </div>
-                </div>
-                <div class="question-table">
-                    <div class="question-table_wrapper">
-                        <h1 class="heading">Question</h1>
-                        <div class="question-item table-title">
-                            <p class="number">NO</p>
-                            <p class="question">QUESTION</p>
-                            <p class="date">DATE CREATED</p>
-                            <p class="icon"></p>
-                        </div>
-                        <div class="question-item">
-                            <p class="number">01</p>
-                            <p class="question">Q: What should I do with hand sanitizer on the FDA's list of hand sanitizers that consumers should not use?</p>
-                            <p class="date">16 Apr 2022</p>
-                            <p class="icon"><img src="{{ asset('theme/assets/imges/dotes.svg" class="img-fluid')}}" alt=""></p>
-                        </div>
-                        <div class="question-item">
-                            <p class="number">02</p>
-                            <p class="question">Q: Does spraying people with disinfectant, or having people go through disinfectant tunnels, walkways, or chambers, lower the spread of COVID-19?
-                            </p>
-                            <p class="date">14 Apr 2022</p>
-                            <p class="icon"><img src="{{ asset('theme/assets/imges/dotes.svg" class="img-fluid')}}" alt=""></p>
-                        </div>
-                        <div class="question-item">
-                            <p class="number">03</p>
-                            <p class="question">Q: What is the FDA process for a COVID-19 vaccine authorized for emergency use versus an FDA-approved COVID-19 vaccine?</p>
-                            <p class="date">14 Apr 2022</p>
-                            <p class="icon"><img src="{{ asset('theme/assets/imges/dotes.svg" class="img-fluid')}}" alt=""></p>
-                        </div>
-                        <div class="question-item">
-                            <p class="number">04</p>
-                            <p class="question">Q: Am I eligible for a second COVID-19 vaccine booster dose?</p>
-                            <p class="date">14 Apr 2022</p>
-                            <p class="icon"><img src="{{ asset('theme/assets/imges/dotes.svg" class="img-fluid')}}" alt=""></p>
+                        <p class="mb-3">No. of Sessions played by this Student</p>
+
+                        <div class="table-responsive" style="padding-top:28px;">
+                            <table class="table no-wrap" id="myTable">
+                                <thead>
+                                    <tr style="background: #F9F9FA; border-radius: 6px;">
+                                        <th class="border-top-0">ID</th>
+                                        <th class="border-top-0">Scenario ID</th>
+                                        <th class="border-top-0">Score</th>
+                                        <th class="border-top-0">Time Taken</th>
+                                        <th class="border-top-0">Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for($i=0; $i<count($session); $i++) @php $a=$i; $a++ @endphp
+                                    <tr>
+                                        <td><a href="{{route('student_session_details',$session[$i]->id)}}" class="fw-bolder text-theme">{{$a}}</a></td>
+                                        <td><a href="{{route('student_session_details',$session[$i]->id)}}" class="fw-bolder text-theme">{{$session[$i]->scenario_id}}</a></td>
+                                        <td>{{$session[$i]->score}}</td>
+                                        <td>{{$session[$i]->time_taken}} Min</td>
+                                        <td>{{date("Y-m-d",strtotime($session[$i]->created_at))}}</td>
+                                    </tr>
+                                    @endfor
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
