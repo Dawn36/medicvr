@@ -23,11 +23,11 @@ Route::get('/', function () {
     return redirect()->route('login');
 });
 
-Route::Get('language/{locale}', function ($locale) {
-    app()->setLocale($locale);
-    session()->put('locale', $locale);
-    return redirect()->route('update_lang');
-});
+// Route::Get('language/{locale}', function ($locale) {
+//     app()->setLocale($locale);
+//     session()->put('locale', $locale);
+//     return redirect()->route('update_lang');
+// });
 Route::Get('/update_lang', [SettingsController::class, 'updateLang'])->name('update_lang');
 
 // Route::get('/dashboard', function () {

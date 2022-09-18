@@ -175,10 +175,10 @@
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                         <li>
-                                            <a class="dropdown-item" href="language/en"><img src="{{ asset('theme/assets/imges/english-fag.svg')}}" class="mb-0" alt="">English</a>
+                                            <a class="dropdown-item" href="{{route('update_lang')}}"><img src="{{ asset('theme/assets/imges/english-fag.svg')}}" class="mb-0" alt="">English</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="language/he"><img src="{{ asset('theme/assets/imges/hebro.svg')}}" class="mb-0" alt="">Hebrew</a>
+                                            <a class="dropdown-item" href="{{route('update_lang')}}"><img src="{{ asset('theme/assets/imges/hebro.svg')}}" class="mb-0" alt="">Hebrew</a>
                                         </li>
                                         
                                     </ul>

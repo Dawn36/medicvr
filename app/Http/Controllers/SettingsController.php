@@ -98,10 +98,14 @@ class SettingsController extends Controller
         $user = User::Find($userId);
         if($user->localization == 'en')
         {
+            app()->setLocale('he');
+            session()->put('locale', 'he');
             $lang='he';
         }
         else
         {
+            app()->setLocale('en');
+            session()->put('locale', 'en');
             $lang='en';
         }
         $user->localization =$lang;
