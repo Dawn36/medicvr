@@ -28,11 +28,13 @@ Route::get('/', function () {
 //     session()->put('locale', $locale);
 //     return redirect()->route('update_lang');
 // });
-Route::Get('/update_lang', [SettingsController::class, 'updateLang'])->name('update_lang');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth'])->name('dashboard');
+
+Route::middleware(['auth'])->group(function () {
+Route::Get('/update_lang', [SettingsController::class, 'updateLang'])->name('update_lang');
 Route::Get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::resource('settings', SettingsController::class);
@@ -68,4 +70,5 @@ Route::Post('superadmin_show', [UserController::class, 'show'])->name('superadmi
 
 Route::post('/settings/{id}/updateEmail', [SettingsController::class, 'updateEmail'])->name('updateEmail');
 Route::post('/settings/{id}/updatePassword', [SettingsController::class, 'updatePassword'])->name('updatePassword');
+});
 require __DIR__.'/auth.php';
