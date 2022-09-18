@@ -5,14 +5,14 @@
 <div class="page-wrapper">
     <!-- Container fluid  -->
     <div class="container-fluid">
-        <h3 class="fw-bolder fs-8 text-center mb-4">Student's Dashboard</h3>
+        <h3 class="fw-bolder fs-8 text-center mb-4">{{__("dashboard.Student's Dashboard")}}</h3>
         <!-- Four charts -->
         <div class="row justify-content-center">
             <div class="col-lg-3 col-md-12">
                 <div class="white-box analytics-info">
                     <div class="d-flex">
                         <img src="{{ asset('theme/assets/imges/student.svg')}}" class="sidebar-icon custom-widgets-icon" alt="">
-                        <p class="box-title mb-0">Total Sessions Played</p>
+                        <p class="box-title mb-0">{{__("dashboard.Total Sessions Played")}}</p>
                     </div>
                     <div class="box-data">
                         <p class="bx-value mb-0">{{count($data['session'])}}</p>
@@ -23,10 +23,10 @@
                 <div class="white-box analytics-info">
                     <div class="d-flex">
                         <img src="{{ asset('theme/assets/imges/sessions.svg')}}" class="sidebar-icon custom-widgets-icon" alt="">
-                        <p class="box-title mb-0">Average Time Of All The Sessions Played</p>
+                        <p class="box-title mb-0">{{__("dashboard.Average Time Of All The Sessions Played")}}</p>
                     </div>
                     <div class="box-data">
-                        <p class="bx-value mb-0">{{$data['avg_time']}} <small>hrs</small></p>
+                        <p class="bx-value mb-0">{{$data['avg_time']}} <small>{{__("dashboard.hrs")}}</small></p>
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="mx-auto my-3 fw-bold fs-5 text-center">Number Of Sessions Played (Per Day)</h3>
+                        <h3 class="mx-auto my-3 fw-bold fs-5 text-center">{{__("dashboard.Number Of Sessions Played (Per Day)")}}</h3>
                         <div id="chart6"></div>
                     </div>
                 </div>
@@ -48,16 +48,16 @@
                 <div class="data-table-wrapper">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h3 class="box-title mb-0">Scoring Of All The Sessions Played</h3>
+                            <h3 class="box-title mb-0">{{__("dashboard.Scoring Of All The Sessions Played")}}</h3>
                             <div class="table-responsive" style="padding-top:28px;">
                                 <table class="table no-wrap" id="myTable">
                                     <thead>
                                         <tr style="background: #F9F9FA; border-radius: 6px;">
-                                            <th class="border-top-0">ID</th>
-                                            <th class="border-top-0">Scenario ID</th>
-                                            <th class="border-top-0">Score</th>
-                                            <th class="border-top-0">Time Taken</th>
-                                            <th class="border-top-0">Date</th>
+                                            <th class="border-top-0">{{__("dashboard.ID")}}</th>
+                                            <th class="border-top-0">{{__("dashboard.Scenario ID")}}</th>
+                                            <th class="border-top-0">{{__("dashboard.Score")}}</th>
+                                            <th class="border-top-0">{{__("dashboard.Time Taken")}}</th>
+                                            <th class="border-top-0">{{__("dashboard.Date")}}</th>
                                         </tr>
                                     </thead>
                                     @php $session=$data['session'] @endphp
@@ -67,7 +67,7 @@
                                             <td><a href="{{route('student_session_details',$session[$i]->id)}}" class="fw-bolder text-theme">{{$a}}</a></td>
                                             <td><a href="{{route('student_session_details',$session[$i]->id)}}" class="fw-bolder text-theme">{{$session[$i]->scenario_id}}</a></td>
                                             <td>{{$session[$i]->score}}</td>
-                                            <td>{{$session[$i]->time_taken }} Min</td>
+                                            <td>{{$session[$i]->time_taken }} {{__("dashboard.Min")}} </td>
                                             <td>{{date("Y-m-d",strtotime($session[$i]->created_at))}}</td>
                                         </tr>
                                         @endfor

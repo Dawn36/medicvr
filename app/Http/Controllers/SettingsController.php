@@ -92,7 +92,22 @@ class SettingsController extends Controller
     {
         //
     }
-
+    public function updateLang()
+    {
+        $userId=Auth::user()->id;
+        $user = User::Find($userId);
+        if($user->localization == 'en')
+        {
+            $lang='he';
+        }
+        else
+        {
+            $lang='en';
+        }
+        $user->localization =$lang;
+        $user->save();
+        return redirect()->back();
+    }
     /**
      * Update the specified resource in storage.
      *

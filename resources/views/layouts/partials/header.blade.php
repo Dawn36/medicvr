@@ -143,9 +143,9 @@
                                 {{ Route::currentRouteName() == 'superadmin' || Route::currentRouteName() == 'superadmin_show' || Route::currentRouteName() == 'superadmin_edit' || Route::currentRouteName() == 'superadmin_create'  ? __('header.superadmin') : '' }} 
                                 {{ Route::currentRouteName() == 'department.index' || Route::currentRouteName() == 'department.show' || Route::currentRouteName() == 'department.edit' || Route::currentRouteName() == 'department.create'  ? __('header.department') : '' }} 
                                 {{ Route::currentRouteName() == 'scenario.index' || Route::currentRouteName() == 'scenario.show' || Route::currentRouteName() == 'scenario.edit' || Route::currentRouteName() == 'scenario.create'  ? __('header.scenario') : '' }} 
-                                {{ Route::currentRouteName() == 'settings.create' ? 'Settings' : '' }} 
-                                {{ Route::currentRouteName() == 'student_session_details' ? 'Session Details' : '' }} 
-                                {{ Route::currentRouteName() == 'dashboard' ? 'Dashboard' : '' }} 
+                                {{ Route::currentRouteName() == 'settings.create' ? __('header.settings') : '' }} 
+                                {{ Route::currentRouteName() == 'student_session_details' ?  __('header.Session Details') : '' }} 
+                                {{ Route::currentRouteName() == 'dashboard' ? __('header.Dashboard') : '' }} 
                               
                             </h4>
                            
@@ -163,18 +163,22 @@
                                 <div class="dropdown">
                                     <button class="btn dropdown-toggle d-flex gap-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                         <figure class="mb-0 flag-wrapper">
+                                            @if(Auth::user()->localization == 'en')
                                             <img src="{{ asset('theme/assets/imges/english-fag.svg')}}" class="mb-0" alt="">
+                                            @else
+                                            <img src="{{ asset('theme/assets/imges/hebro.svg')}}" class="mb-0" alt="">
+                                            @endif
                                         </figure>
-                                        <figure class="mb-0">
+                                        <figure class="mb-0 ">
                                             <img src="{{ asset('theme/assets/imges/arrow-down-3-lang.svg')}}" class="mb-0" alt="">
                                         </figure>
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                         <li>
-                                            <a class="dropdown-item" href="#"><img src="{{ asset('theme/assets/imges/english-fag.svg')}}" class="mb-0" alt="">English</a>
+                                            <a class="dropdown-item" href="language/en"><img src="{{ asset('theme/assets/imges/english-fag.svg')}}" class="mb-0" alt="">English</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="#"><img src="{{ asset('theme/assets/imges/hebro.svg')}}" class="mb-0" alt="">Hebrew</a>
+                                            <a class="dropdown-item" href="language/he"><img src="{{ asset('theme/assets/imges/hebro.svg')}}" class="mb-0" alt="">Hebrew</a>
                                         </li>
                                         
                                     </ul>
@@ -186,7 +190,7 @@
                                 <img src="{{ asset('/profile/' . Auth::user()->profile_picture) }}" alt="user-img" class="img-circle">
                                 <div class="name ms-2">
                                     <p class="mb-0">{{ ucwords(Auth::user()->first_name) }} {{ucwords(Auth::user()->last_name)}}</p>
-                                    <small>{{ Auth::user()->roles->first()->display_name }}</small>
+                                    <small>{{ __('header.'.Auth::user()->roles->first()->display_name) }}</small>
                                 </div>
                                 <div class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                     <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">

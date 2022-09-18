@@ -27,7 +27,6 @@
   <x-auth-session-status class="mb-4" :status="session('status')" />
 
   <!-- Validation Errors -->
-  <x-auth-validation-errors class="mb-4" :errors="$errors" />
     <div class="sign-in-page">
         <div class="sign-in-page_wrapper">
             <div class="sign-in-page_left">
@@ -38,6 +37,8 @@
             </div>
             <div class="sign-in-page_right">
                 <div class="sign-in-form">
+                    <x-auth-validation-errors class="mb-4" :errors="$errors" />
+
                     <h1>{{__('login.welcome')}}</h1>
                     <p>{{__('login.welcome')}} {{__('login.welcomeenteryourdetails')}} </p>
                     <form method="POST" action="{{ route('login') }}">

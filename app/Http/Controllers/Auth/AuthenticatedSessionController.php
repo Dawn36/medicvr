@@ -33,6 +33,8 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
+        $localization=Auth::user()->localization;
+        Session::put('locale', $localization);
         if(!Auth::user()->hasRole('superadmin'))
         {
             $hospitalsId=Auth::user()->hospitals_id;

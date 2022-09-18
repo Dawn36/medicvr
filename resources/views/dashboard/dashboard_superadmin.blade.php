@@ -7,14 +7,14 @@
 <div class="page-wrapper">
     <!-- Container fluid  -->
     <div class="container-fluid">
-    <h3 class="fw-bolder fs-8 text-center mb-4">Super Admin's Dashboard</h3>
+    <h3 class="fw-bolder fs-8 text-center mb-4">{{__("dashboard.Super Admin's Dashboard")}}</h3>
         <!-- Four charts -->
         <div class="row justify-content-center">
             <div class="col-lg-3 col-md-12">
                 <div class="white-box analytics-info">
                     <div class="d-flex">
                         <img src="{{ asset('theme/assets/imges/hospital.svg')}}" class="sidebar-icon custom-widgets-icon" alt="">
-                        <p class="box-title mb-0">Total Hospitals</p>
+                        <p class="box-title mb-0">{{__("dashboard.Total Hospitals")}}</p>
                     </div>
                     <div class="box-data">
                         <p class="bx-value mb-0">{{$data['hospital_count']}}</p>
@@ -25,7 +25,7 @@
                 <div class="white-box analytics-info">
                     <div class="d-flex">
                         <img src="{{ asset('theme/assets/imges/sessions.svg')}}" class="sidebar-icon custom-widgets-icon" alt="">
-                        <p class="box-title mb-0">Total Sessions Played</p>
+                        <p class="box-title mb-0">{{__("dashboard.Total Sessions Played")}}</p>
                     </div>
                     <div class="box-data">
                         <p class="bx-value mb-0">{{$data['game_session_count']}}</p>
@@ -49,7 +49,7 @@
             <div class="col-lg-6 col-md-12 col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="mx-auto my-3 fw-bold fs-5 text-center">Average Session Duration (Per Day)</h3>
+                        <h3 class="mx-auto my-3 fw-bold fs-5 text-center">{{__("dashboard.Average Session Duration (Per Day)")}}</h3>
                         <div id="chart"></div>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
             <div class="col-lg-6 col-md-12 col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="mx-auto my-3 fw-bold fs-5 text-center">Number of Sessions (Per Day)</h3>
+                        <h3 class="mx-auto my-3 fw-bold fs-5 text-center">{{__("dashboard.Number of Sessions (Per Day)")}}</h3>
                         <div id="chart1"></div>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
         </div>
 
         <div class="row">
-            <h3 class="mx-auto my-5 fw-bolder fs-10 text-center">Hospitals</h3>
+            <h3 class="mx-auto my-5 fw-bolder fs-10 text-center">{{__("dashboard.Hospitals")}}</h3>
            @for($i=0; $i< count($data['hospital_listing']);$i++)
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="card">
@@ -80,7 +80,7 @@
                                 <div class="white-box analytics-info">
                                     <div class="d-flex">
                                         <img src="{{ asset('theme/assets/imges/hospital.svg')}}" class="sidebar-icon custom-widgets-icon" alt="">
-                                        <p class="box-title mb-0">Sessions Played</p>
+                                        <p class="box-title mb-0">{{__("dashboard.Sessions Played")}}</p>
                                     </div>
                                     <div class="box-data">
                                         <p class="bx-value mb-0">{{$data['hospital_listing'][$i]->sessions_played}}</p>
@@ -91,10 +91,10 @@
                                 <div class="white-box analytics-info">
                                     <div class="d-flex">
                                         <img src="{{ asset('theme/assets/imges/hospital.svg')}}" class="sidebar-icon custom-widgets-icon" alt="">
-                                        <p class="box-title mb-0">Hours Played</p>
+                                        <p class="box-title mb-0">{{__("dashboard.Hours Played")}}</p>
                                     </div>
                                     <div class="box-data">
-                                        <p class="bx-value mb-0">{{$data['hospital_listing'][$i]->sessions_played}} <small>hrs</small></p>
+                                        <p class="bx-value mb-0">{{$data['hospital_listing'][$i]->sessions_played}} <small>{{__("dashboard.hrs")}}</small></p>
                                     </div>
                                 </div>
                             </div>
@@ -102,7 +102,7 @@
                                 <div class="white-box analytics-info">
                                     <div class="d-flex">
                                         <img src="{{ asset('theme/assets/imges/hospital.svg')}}" class="sidebar-icon custom-widgets-icon" alt="">
-                                        <p class="box-title mb-0">Number of Admins</p>
+                                        <p class="box-title mb-0">{{__("dashboard.Sessions Played")}}</p>
                                     </div>
                                     <div class="box-data">
                                         <p class="bx-value mb-0">{{$data['hospital_listing'][$i]->admin_count}}</p>
@@ -113,7 +113,7 @@
                                 <div class="white-box analytics-info">
                                     <div class="d-flex">
                                         <img src="{{ asset('theme/assets/imges/hospital.svg')}}" class="sidebar-icon custom-widgets-icon" alt="">
-                                        <p class="box-title mb-0">Number of Teachers</p>
+                                        <p class="box-title mb-0">{{__("dashboard.Number of Teachers")}}</p>
                                     </div>
                                     <div class="box-data">
                                         <p class="bx-value mb-0">{{$data['hospital_listing'][$i]->teacher_count}}</p>
@@ -124,7 +124,7 @@
                                 <div class="white-box analytics-info">
                                     <div class="d-flex">
                                         <img src="{{ asset('theme/assets/imges/hospital.svg')}}" class="sidebar-icon custom-widgets-icon" alt="">
-                                        <p class="box-title mb-0">Number of Students</p>
+                                        <p class="box-title mb-0">{{__("dashboard.Number of Students")}}</p>
                                     </div>
                                     <div class="box-data">
                                         <p class="bx-value mb-0">{{$data['hospital_listing'][$i]->student_count}}</p>
@@ -143,12 +143,12 @@
             <div class="col-md-12 col-lg-12 col-sm-12">
                 <div class="data-table-wrapper">
                     <div class="d-flex align-items-center justify-content-between nav-tab-heading">
-                        <h3 class="box-title mb-0">Guided Information</h3>
+                        <h3 class="box-title mb-0">{{__("dashboard.Guided Information")}}</h3>
                         <div class="btn-wrapper d-flex gap-2">
                             <div class="dropdown">
                                 <div class="btn-group" role="group">
                                     <button id="btnGroupDrop1" type="button" class="btn btn-save dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="fas fa-plus pe-1"></i> Add
+                                        <i class="fas fa-plus pe-1"></i>{{__("dashboard.Add")}}
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                                         <a class="dropdown-item" href="add_hospital.php">Hospital</a>

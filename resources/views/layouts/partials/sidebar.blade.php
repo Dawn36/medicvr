@@ -107,19 +107,20 @@
                     <div class="ative-tab"></div>
                 </li>
                 @elseif(Auth::user()->hasRole('student'))
-                <li class="sidebar-item">
-                    <form id='student{{Auth::user()->id}}' style="display: inline-block" method="POST" action="{{ route('student_show') }}">
-                        @csrf
-                        <input hidden name="role_id" value="student"/>
-                        <input hidden name="user_id" value="{{Auth::user()->id}}"/>
+                <form id='student{{Auth::user()->id}}'  method="POST" action="{{ route('student_show') }}">
+                    @csrf
+                    <input hidden name="role_id" value="student"/>
+                    <input hidden name="user_id" value="{{Auth::user()->id}}"/>
+                    <li class="sidebar-item">
+                       
                         <a class="sidebar-link waves-effect waves-dark sidebar-link {{ Route::currentRouteName() == 'student' || Route::currentRouteName() == 'student_show' || Route::currentRouteName() == 'student_edit' || Route::currentRouteName() == 'student_create'  ? 'active' : '' }} " 
                     href="{{ route('student_show') }}" type="submit" onclick="event.preventDefault(); document.getElementById('student{{Auth::user()->id}}').submit();" aria-expanded="false">
                         <img src="{{ asset('theme/assets/imges/student.svg')}}" class="sidebar-icon" alt="">
                         <span class="hide-menu">{{__('sidebar.student')}}</span>
                     </a>
-                </form>
                     <div class="ative-tab"></div>
                 </li>
+             </form>
                 @endif
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('settings.create') }}" aria-expanded="false">

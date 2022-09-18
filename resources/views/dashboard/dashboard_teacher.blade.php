@@ -5,14 +5,14 @@
 <div class="page-wrapper">
     <!-- Container fluid  -->
     <div class="container-fluid">
-        <h3 class="fw-bolder fs-8 text-center mb-4">Teacher's Dashboard</h3>
+        <h3 class="fw-bolder fs-8 text-center mb-4">{{__("dashboard.Teacher's Dashboard")}}</h3>
         <!-- Four charts -->
         <div class="row justify-content-center">
             <div class="col-lg-3 col-md-12">
                 <div class="white-box analytics-info">
                     <div class="d-flex">
                         <img src="{{ asset('theme/assets/imges/student.svg')}}" class="sidebar-icon custom-widgets-icon" alt="">
-                        <p class="box-title mb-0">Total Students</p>
+                        <p class="box-title mb-0">{{__("dashboard.Total Students")}}</p>
                     </div>
                     <div class="box-data">
                         <p class="bx-value mb-0">{{count($data['student'])}}</p>
@@ -25,7 +25,7 @@
             <div class="col-lg-6 col-md-12 col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="mx-auto my-3 fw-bold fs-5 text-center">Average Session Duration (Per Day)</h3>
+                        <h3 class="mx-auto my-3 fw-bold fs-5 text-center">{{__("dashboard.Average Session Duration (Per Day)")}}</h3>
                         <div id="chart4"></div>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
             <div class="col-lg-6 col-md-12 col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="mx-auto my-3 fw-bold fs-5 text-center">Number of Sessions (Per Day)</h3>
+                        <h3 class="mx-auto my-3 fw-bold fs-5 text-center">{{__("dashboard.Number of Sessions (Per Day)")}}</h3>
                         <div id="chart5"></div>
                     </div>
                 </div>
@@ -48,10 +48,10 @@
                             <div class="dropdown">
                                 <div class="btn-group" role="group">
                                     <button id="btnGroupDrop1" type="button" class="btn btn-save dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="fas fa-plus pe-1"></i> Add
+                                        <i class="fas fa-plus pe-1"></i>{{__("dashboard.Add")}} 
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                        <a class="dropdown-item" href="{{route('student_create','student')}}">Student</a>
+                                        <a class="dropdown-item" href="{{route('student_create','student')}}">{{__("dashboard.Student")}} </a>
                                     </div>
                                 </div>
                             </div>
@@ -60,26 +60,26 @@
                     @php $student=$data['student']; @endphp
                     <div class="row">
                         <div class="col-lg-12">
-                            <h3 class="box-title mb-0">Students</h3>
+                            <h3 class="box-title mb-0">{{__("dashboard.Student")}} </h3>
                             <div class="table-responsive" style="padding-top:28px;">
                                 <table class="table no-wrap" id="myTable">
                                     <thead>
                                         <tr style="background: #F9F9FA; border-radius: 6px;">
-                                            <th class="border-top-0">ID</th>
+                                            <th class="border-top-0">{{__("gobal.id")}}</th>
                                             <th class="border-top-0">
-                                                First Name
+                                                {{__("gobal.first_name")}} 
                                             </th>
                                             <th class="border-top-0">
-                                                Last Name
+                                                {{__("gobal.last_name")}}
                                             </th>
                                             <th class="border-top-0">
-                                                Phone Number
+                                                {{__("gobal.phone")}} 
                                             </th>
                                             <th class="border-top-0">
-                                                Email
+                                                {{__("gobal.email")}} 
                                             </th>
                                             <th class="border-top-0">
-                                                Created On
+                                                {{__("gobal.created_on")}} 
                                             </th>
                                         </tr>
                                     </thead>
