@@ -105,5 +105,10 @@ return [
     'Teacher Details'=>'פרטי המורה',
     'Delete teacher'=>'מחק את המורה',
     'Hospital Details'=>'פרטי בית החולים',
+    'Action'=>'פעולה',
+    'Select Scenario Name'=>'בחר שם תרחיש',
+    'Scenario'=>'תַרחִישׁ',
+    'Map Scenario to Hospital'=>'מפה תרחיש לבית החולים',
+    'Scenario Mapping Add'=>'מיפוי תרחיש הוסף',
     
 ];

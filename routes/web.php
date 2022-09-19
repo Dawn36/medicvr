@@ -7,6 +7,7 @@ Use App\Http\Controllers\UserController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\ScenarioController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ScenarioMappingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,7 @@ Route::Get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 
 Route::resource('settings', SettingsController::class);
 Route::resource('user', UserController::class);
+Route::resource('scenario_mapping', ScenarioMappingController::class);
 Route::resource('hospitals', HospitalsController::class);
 Route::resource('department', DepartmentController::class);
 Route::resource('scenario', ScenarioController::class);

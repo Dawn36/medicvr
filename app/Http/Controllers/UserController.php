@@ -199,7 +199,9 @@ class UserController extends Controller
         if($role == 'student')
         {
             $student=User::with('hospitals')->find($userId);
-            $session=DB::table('game_session')->where('user_id',$userId)->get();
+            // $session=DB::table('game_session')->where('user_id',$userId)->get();
+            $session = DB::select(DB::raw("SELECT gs.`id`,s.`name` AS s_name,d.`name` AS d_name,gs.`score`,gs.`time_taken`,gs.`created_at` FROM `game_session` gs INNER JOIN `scenarios` s ON gs.`scenario_id`=s.`id`
+            INNER JOIN `departments` d ON d.`id`= s.`department_id` WHERE gs.`user_id`='$userId'"));
             return view('student/student_show', compact('student','session'));
         }
        
@@ -387,7 +389,9 @@ class UserController extends Controller
         $aveScore=DB::table('game_session_question')
         ->select(DB::raw('MAX(score) AS max_score, AVG(score) AS avg_score'))
         ->where('game_session_id', $id)->get();
-        return view('student/student_session_details',compact('aveScore','gameSessionQuestion','gameSessionProcedure'));
+        $scenariosName = DB::select(DB::raw("SELECT s.`name`  FROM `game_session` gs INNER JOIN `scenarios` s ON gs.`scenario_id`=s.`id`
+             WHERE gs.`id`='$id'"));
+        return view('student/student_session_details',compact('scenariosName','aveScore','gameSessionQuestion','gameSessionProcedure'));
     }
     
 }

@@ -108,8 +108,92 @@
                         </div>
                     </div>
                 </div>
+                <div class="gernal-info bg-white">
+                    <div class="block">
+                       
+                        
+                        <div class="d-flex align-items-center justify-content-between py-4 nav-tab-heading">
+                            <h4 class="heading mb-0">{{__('gobal.Scenario')}} </h4>
+                            <div class="btn-wrapper d-flex gap-2">
+                                <!-- <button class="btn btn-print bg-white d-flex align-items-center gap-2"><img src="./assets/imges/print.svg" alt=""> Print</button> -->
+                                <button class="btn btn-save d-flex align-items-center gap-2" onclick="scenarioMapping('{{$hospital->id}}')"><img src="{{ asset('theme/assets/imges/hospital.svg')}}" width="25px" alt="">{{__('gobal.Map Scenario to Hospital')}}</button>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive" style="padding-top:28px;">
+                            <table class="table no-wrap" id="myTable">
+                                <thead>
+                                    <tr style="background: #F9F9FA; border-radius: 6px;">
+                                        <th class="border-top-0">{{__('gobal.id')}}</th>
+                                        <th class="border-top-0">{{__('gobal.Scenario Name')}}</th>
+                                        <th class="border-top-0">{{__('gobal.created_on')}}</th>
+                                        <th class="border-top-0">{{__('gobal.Action')}}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for ($i = 0; $i < count($scenariosMapping); $i++) @php $a=$i; $a++ @endphp
+                                    <tr>
+                                        <td>{{$a}}</td>
+                                       <td>{{ucwords($scenariosMapping[$i]->name)}}</td>
+                                       <td>{{Date("Y-m-d",strtotime($scenariosMapping[$i]->created_at) )}}</td>
+                                       <td>
+                                        <button onclick="editScenarioMapping('{{$scenariosMapping[$i]->id}}','{{$scenariosMapping[$i]->scenario_id}}','{{$hospital->id}}')"  class="btn "><i class="fas fa-pen"></i></button>
+                                        <form style="display: inline-block" id='delete_scenariosMapping' method="POST" action="{{ route('scenario_mapping.destroy', $scenariosMapping[$i]->id) }}">
+                                            @method('DELETE')
+                                            @csrf
+                                            <a href="{{ route('scenario_mapping.destroy', $scenariosMapping[$i]->id) }}" onclick="event.preventDefault(); document.getElementById('delete_scenariosMapping').submit();" class="btn btn-save "><i class="fas fa-trash"></i></a>
+                                        </form>
+                                        </td>
+                                    </tr>
+                                    @endfor
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- Button trigger modal -->
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+    function scenarioMapping(hospitalId)
+   {
+     var value = {
+        hospitalId: hospitalId,
+           };
+       $.ajax({
+           type: 'GET',
+           url: "{{ route('scenario_mapping.create') }}",
+           data: value,
+           success: function(result) {
+               $('#exampleModalLabel').html('Scenario Mapping Add');
+               $('#modalbody').html(result);
+               $('#exampleModal').modal('show');
+           }
+          
+       });
+   }
+   function editScenarioMapping(mappingId,scenarioId,hospitalId)
+   {
+    var value = {
+        scenarioId: scenarioId,
+        mappingId: mappingId,
+        hospitalId: hospitalId,
+           };
+    url = "{{ route('scenario_mapping.edit', ':id') }}";
+        url = url.replace(':id', mappingId);
+        $.ajax({
+            type: 'GET',
+            url: url,
+            data: value,
+            success: function(result) {
+                $('#exampleModalLabel').html('Scenario Mapping Edit');
+                $('#modalbody').html(result);
+                $('#exampleModal').modal('show');
+            }
+        });
+   }
+</script>
 @endsection('content')

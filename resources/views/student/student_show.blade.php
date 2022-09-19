@@ -172,7 +172,8 @@
                                 <thead>
                                     <tr style="background: #F9F9FA; border-radius: 6px;">
                                         <th class="border-top-0">{{__('gobal.id')}}</th>
-                                        <th class="border-top-0">{{__('gobal.Scenario id')}}</th>
+                                        <th class="border-top-0">{{__('gobal.Scenario Name')}}</th>
+                                        <th class="border-top-0">{{__('gobal.Department Name')}}</th>
                                         <th class="border-top-0">{{__('gobal.Score')}}</th>
                                         <th class="border-top-0">{{__('gobal.Time Taken')}}</th>
                                         <th class="border-top-0">{{__('gobal.Date')}}</th>
@@ -182,7 +183,8 @@
                                     @for($i=0; $i<count($session); $i++) @php $a=$i; $a++ @endphp
                                     <tr>
                                         <td><a href="{{route('student_session_details',$session[$i]->id)}}" class="fw-bolder text-theme">{{$a}}</a></td>
-                                        <td><a href="{{route('student_session_details',$session[$i]->id)}}" class="fw-bolder text-theme">{{$session[$i]->scenario_id}}</a></td>
+                                        <td><a href="{{route('student_session_details',$session[$i]->id)}}" class="fw-bolder text-theme">{{ucwords($session[$i]->s_name)}}</a></td>
+                                        <td>{{ucwords($session[$i]->d_name)}}</td>
                                         <td>{{$session[$i]->score}}</td>
                                         <td>{{$session[$i]->time_taken}} Min</td>
                                         <td>{{date("Y-m-d",strtotime($session[$i]->created_at))}}</td>

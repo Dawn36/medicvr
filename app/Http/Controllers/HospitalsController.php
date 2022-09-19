@@ -99,7 +99,10 @@ class HospitalsController extends Controller
         $adminCount = DB::select(DB::raw("SELECT COUNT(id) AS count_id FROM users WHERE hospitals_id='$id' AND user_type='admin'"));
         $teacherCount = DB::select(DB::raw("SELECT COUNT(id) AS count_id FROM users WHERE hospitals_id='$id' AND user_type='teacher'"));
         $studentCount = DB::select(DB::raw("SELECT COUNT(id) AS count_id FROM users WHERE hospitals_id='$id' AND user_type='student'"));
-        return view('hospitals/hospitals_show',compact('hospital','adminCount','teacherCount','studentCount'));
+        $scenariosMapping = DB::select(DB::raw("SELECT s.`id` AS scenario_id,sm.`id`,s.`name`,sm.`created_at` FROM `scenarios` s INNER JOIN `scenario_mappings` sm ON s.`id`=sm.`scenarios_id`
+        WHERE sm.`hospital_id`='$id'"));
+
+        return view('hospitals/hospitals_show',compact('hospital','adminCount','teacherCount','studentCount','scenariosMapping'));
     }
 
     /**

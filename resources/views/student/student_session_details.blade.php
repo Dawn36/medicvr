@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <small class="fw-bold">{{__('gobal.Scenrio Name')}}</small>
-                <h1 class="title fw-bold">COVID</h1>
+                <h1 class="title fw-bold">{{ucwords($scenariosName[0]->name)}}</h1>
             </div>
         </div>
         <div class="row justify-content-center">

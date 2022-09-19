@@ -105,5 +105,9 @@ return [
     'Teacher Details'=>'Teacher Details',
     'Delete teacher'=>'Delete teacher',
     'Hospital Details'=>'Hospital Details',
-    
+    'Action'=>'Action',
+    'Select Scenario Name'=>'Select Scenario Name',
+    'Scenario'=>'Scenario',
+    'Map Scenario to Hospital'=>'Map Scenario to Hospital',
+    'Scenario Mapping Add'=>'Scenario Mapping Add',
 ];
