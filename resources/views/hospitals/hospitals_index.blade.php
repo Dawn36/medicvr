@@ -22,7 +22,7 @@
                                     <tr style="background: #F9F9FA; border-radius: 6px;">
                                         <th class="border-top-0">{{__('gobal.id')}}</th>
                                         <th class="border-top-0">
-                                            {{__('gobal.Hospital Name')}} 
+                                            {{__('gobal.hospital_name')}} 
                                         </th>
                                         <th class="border-top-0">
                                             {{__('gobal.phone')}}  

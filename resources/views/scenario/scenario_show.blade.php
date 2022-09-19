@@ -35,7 +35,7 @@
                     <div class="block">
                         <div class="row pb-2">
                             <div class="col-md-6 pb-2">
-                                <label class="fw-bold">{{__('gobal.Scenario Id')}}<span class="required">*</span></label>
+                                <label class="fw-bold">{{__('gobal.Scenario id')}}<span class="required">*</span></label>
                                 <p class="text-dark">{{$scenario[0]->sce_id}}</p>
                             </div>
                             <div class="col-md-6 pb-2">

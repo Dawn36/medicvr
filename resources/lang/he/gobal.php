@@ -104,5 +104,6 @@ return [
     'Teacher List'=>'רשימת מורים',
     'Teacher Details'=>'פרטי המורה',
     'Delete teacher'=>'מחק את המורה',
+    'Hospital Details'=>'פרטי בית החולים',
     
 ];

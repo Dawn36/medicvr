@@ -22,11 +22,11 @@
                                             {{__('gobal.id')}}
                                         </th>
                                         <th class="border-top-0">
-                                            {{__('gobal.Scenario ID')}}
+                                            {{__('gobal.Scenario id')}}
                                         </th>
                                        
                                         <th class="border-top-0">
-                                            {{__('gobal.Secnario Name')}}
+                                            {{__('gobal.Scenario Name')}}
                                         </th>
                                         <th class="border-top-0">
                                             {{__('gobal.Department Name')}}

@@ -24,7 +24,7 @@
                         <h2 class="accordion-header" id="headingOne">
                             <button class="accordion-button" type="">
                                 <div>
-                                    <small>{{__('gobal.Hospital Name')}}</small>
+                                    <small>{{__('gobal.hospital_name')}}</small>
                                     <h1 class="title">{{ucwords($hospital->hospital_name)}}</h1>
                                 </div>
                             </button>
@@ -74,7 +74,7 @@
                     <div class="block">
                         <div class="row pb-2">
                             <div class="col-md-6 pb-2">
-                                <label class="fw-bold">{{__('gobal.Hospital Name')}}</label>
+                                <label class="fw-bold">{{__('gobal.hospital_name')}}</label>
                                 <p class="text-dark">{{ucwords($hospital->hospital_name)}}</p>
                             </div>
                             <div class="col-md-6 pb-2">

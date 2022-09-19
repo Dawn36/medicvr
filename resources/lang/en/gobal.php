@@ -104,5 +104,6 @@ return [
     'Teacher List'=>'Teacher List',
     'Teacher Details'=>'Teacher Details',
     'Delete teacher'=>'Delete teacher',
+    'Hospital Details'=>'Hospital Details',
     
 ];
