@@ -45,7 +45,7 @@
                         @csrf
                         <div class="mb-3">
                             <label for="email" class="form-label">{{__('login.email')}}</label>
-                            <input type="email" class="form-control" name='email' id="email" aria-describedby="emailHelp">
+                            <input type="text" class="form-control" name='email' id="email" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">{{__('login.password')}}</label>

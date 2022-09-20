@@ -113,6 +113,10 @@ class Dashboard extends Model
         $student = User::where('parent_id',$userId)->get();
         $child=User::where('parent_id',$userId)->pluck('id')->toArray();
         $child=implode(',',$child);
+        if($child == '')
+        {
+          $child=0;
+        }
         $numberOfSessionPerDay= DB::select(DB::raw("select DAY(created_at) AS days,count(id) AS count_id,SUM(time_taken) AS time_taken from `game_session` 
         where month(created_at) = '$month' and year(created_at) = '$year' AND user_id IN ($child)  group by day(created_at)"));
         for($i=1; $i <= date('t'); $i++)
