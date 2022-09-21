@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-@php
+{{-- @php
  $locale=Session::get('locale');
  $ltrRtl=$locale=='en' ? 'ltr' : 'rtl'
-@endphp
-<html dir="{{$ltrRtl}}" lang="en">
+@endphp --}}
+<html dir="ltr" lang="en">
     @php 
      $primaryColor="";
      $secondaryColor="";
