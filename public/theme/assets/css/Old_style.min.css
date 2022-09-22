@@ -5025,7 +5025,7 @@ fieldset:disabled .btn {
     justify-content: space-between
 }
 
-html[dir=ltr] body .navbar-brand {
+.navbar-brand {
     padding: 44px 67px 49px 44px;
     display: block;
     font-size: 1.09375rem;
@@ -12649,7 +12649,7 @@ html[dir=ltr] body .p-l-0 {
     color: #337ab7
 }
 
-html[dir=ltr] body #main-wrapper[data-layout=vertical][data-sidebartype=full] .page-wrapper {
+#main-wrapper[data-layout=vertical][data-sidebartype=full] .page-wrapper {
     margin-left: 270px
 }
 
@@ -12662,7 +12662,7 @@ html[dir=ltr] body #main-wrapper[data-layout=vertical][data-sidebartype=full] .p
     border-radius: 8px;
 }
 
-html[dir=ltr] body .white-box .box-title {
+.white-box .box-title {
     font-family: 'Manrope' sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -13752,7 +13752,7 @@ select.form-select.form-control-line {
     width: 100%;
 }
 
-html[dir=ltr] body .sidebar-nav ul .sidebar-item .sidebar-link {
+.sidebar-nav ul .sidebar-item .sidebar-link {
     color: #fff;
     padding: 12px 101px 12px 12px;
     display: -webkit-box;
@@ -14910,7 +14910,7 @@ html body .waves-notransition {
 
 /* dsdsds */
 
-html[dir=ltr] body .navbar-nav {
+.navbar-nav {
     padding-left: 5rem;
     width: 100%;
 }
@@ -15031,7 +15031,7 @@ html[dir=ltr] body .navbar-nav {
     line-height: 19.12px;
 }
 
-html[dir=ltr] body .profile-dropdown svg {
+.profile-dropdown svg {
     margin-top: 8px;
     margin-left: 10px;
 }
@@ -15954,398 +15954,4 @@ select {
     background-color: #007860;
     padding: 3px;
     border-radius: 25px;
-}
-
-
-/* RTL Version CSS */
-
-html[dir=rtl] body .m-t-5 {
-    margin-top: 5px
-}
-
-html[dir=rtl] body .m-b-5 {
-    margin-bottom: 5px
-}
-
-html[dir=rtl] body .m-r-5 {
-    margin-right: 5px
-}
-
-html[dir=rtl] body .m-l-5 {
-    margin-left: 5px
-}
-
-html[dir=rtl] body .p-t-5 {
-    padding-top: 5px
-}
-
-html[dir=rtl] body .p-b-5 {
-    padding-bottom: 5px
-}
-
-html[dir=rtl] body .p-r-5 {
-    padding-right: 5px
-}
-
-html[dir=rtl] body .p-l-5 {
-    padding-left: 5px
-}
-
-html[dir=rtl] body .p-5 {
-    padding: 5px
-}
-
-html[dir=rtl] body .m-5 {
-    margin: 5px
-}
-
-html[dir=rtl] body .m-t-10 {
-    margin-top: 10px
-}
-
-html[dir=rtl] body .m-b-10 {
-    margin-bottom: 10px
-}
-
-html[dir=rtl] body .m-r-10 {
-    margin-right: 10px
-}
-
-html[dir=rtl] body .m-l-10 {
-    margin-left: 10px
-}
-
-html[dir=rtl] body .p-t-10 {
-    padding-top: 10px
-}
-
-html[dir=rtl] body .p-b-10 {
-    padding-bottom: 10px
-}
-
-html[dir=rtl] body .p-r-10 {
-    padding-right: 10px
-}
-
-html[dir=rtl] body .p-l-10 {
-    padding-left: 10px
-}
-
-html[dir=rtl] body .p-10 {
-    padding: 10px
-}
-
-html[dir=rtl] body .m-10 {
-    margin: 10px
-}
-
-html[dir=rtl] body .m-t-15 {
-    margin-top: 15px
-}
-
-html[dir=rtl] body .m-b-15 {
-    margin-bottom: 15px
-}
-
-html[dir=rtl] body .m-r-15 {
-    margin-right: 15px
-}
-
-html[dir=rtl] body .m-l-15 {
-    margin-left: 15px
-}
-
-html[dir=rtl] body .p-t-15 {
-    padding-top: 15px
-}
-
-html[dir=rtl] body .p-b-15 {
-    padding-bottom: 15px
-}
-
-html[dir=rtl] body .p-r-15 {
-    padding-right: 15px
-}
-
-html[dir=rtl] body .p-l-15 {
-    padding-left: 15px
-}
-
-html[dir=rtl] body .p-15 {
-    padding: 15px
-}
-
-html[dir=rtl] body .m-15 {
-    margin: 15px
-}
-
-html[dir=rtl] body .m-t-20 {
-    margin-top: 20px
-}
-
-html[dir=rtl] body .m-b-20 {
-    margin-bottom: 20px
-}
-
-html[dir=rtl] body .m-r-20 {
-    margin-right: 20px
-}
-
-html[dir=rtl] body .m-l-20 {
-    margin-left: 20px
-}
-
-html[dir=rtl] body .p-t-20 {
-    padding-top: 20px
-}
-
-html[dir=rtl] body .p-b-20 {
-    padding-bottom: 20px
-}
-
-html[dir=rtl] body .p-r-20 {
-    padding-right: 20px
-}
-
-html[dir=rtl] body .p-l-20 {
-    padding-left: 20px
-}
-
-html[dir=rtl] body .p-20 {
-    padding: 20px
-}
-
-html[dir=rtl] body .m-20 {
-    margin: 20px
-}
-
-html[dir=rtl] body .m-t-25 {
-    margin-top: 25px
-}
-
-html[dir=rtl] body .m-b-25 {
-    margin-bottom: 25px
-}
-
-html[dir=rtl] body .m-r-25 {
-    margin-right: 25px
-}
-
-html[dir=rtl] body .m-l-25 {
-    margin-left: 25px
-}
-
-html[dir=rtl] body .p-t-25 {
-    padding-top: 25px
-}
-
-html[dir=rtl] body .p-b-25 {
-    padding-bottom: 25px
-}
-
-html[dir=rtl] body .p-r-25 {
-    padding-right: 25px
-}
-
-html[dir=rtl] body .p-l-25 {
-    padding-left: 25px
-}
-
-html[dir=rtl] body .p-25 {
-    padding: 25px
-}
-
-html[dir=rtl] body .m-25 {
-    margin: 25px
-}
-
-html[dir=rtl] body .m-t-30 {
-    margin-top: 30px
-}
-
-html[dir=rtl] body .m-b-30 {
-    margin-bottom: 30px
-}
-
-html[dir=rtl] body .m-r-30 {
-    margin-right: 30px
-}
-
-html[dir=rtl] body .m-l-30 {
-    margin-left: 30px
-}
-
-html[dir=rtl] body .p-t-30 {
-    padding-top: 30px
-}
-
-html[dir=rtl] body .p-b-30 {
-    padding-bottom: 30px
-}
-
-html[dir=rtl] body .p-r-30 {
-    padding-right: 30px
-}
-
-html[dir=rtl] body .p-l-30 {
-    padding-left: 30px
-}
-
-html[dir=rtl] body .p-30 {
-    padding: 30px
-}
-
-html[dir=rtl] body .m-30 {
-    margin: 30px
-}
-
-html[dir=rtl] body .m-t-40 {
-    margin-top: 40px
-}
-
-html[dir=rtl] body .m-b-40 {
-    margin-bottom: 40px
-}
-
-html[dir=rtl] body .m-r-40 {
-    margin-right: 40px
-}
-
-html[dir=rtl] body .m-l-40 {
-    margin-left: 40px
-}
-
-html[dir=rtl] body .p-t-40 {
-    padding-top: 40px
-}
-
-html[dir=rtl] body .p-b-40 {
-    padding-bottom: 40px
-}
-
-html[dir=rtl] body .p-r-40 {
-    padding-right: 40px
-}
-
-html[dir=rtl] body .p-l-40 {
-    padding-left: 40px
-}
-
-html[dir=rtl] body .p-40 {
-    padding: 40px
-}
-
-html[dir=rtl] body .m-40 {
-    margin: 40px
-}
-
-html[dir=rtl] body .m-0-0 {
-    margin: 0
-}
-
-html[dir=rtl] body .m-t-0 {
-    margin-top: 0
-}
-
-html[dir=rtl] body .m-r-0 {
-    margin-right: 0
-}
-
-html[dir=rtl] body .m-b-0 {
-    margin-bottom: 0
-}
-
-html[dir=rtl] body .m-l-0 {
-    margin-left: 0
-}
-
-html[dir=rtl] body .p-0-0 {
-    padding: 0
-}
-
-html[dir=rtl] body .p-t-0 {
-    padding-top: 0
-}
-
-html[dir=rtl] body .p-r-0 {
-    padding-right: 0
-}
-
-html[dir=rtl] body .p-b-0 {
-    padding-bottom: 0
-}
-
-html[dir=rtl] body .p-l-0 {
-    padding-left: 0
-}
-
-html[dir=rtl] body #main-wrapper[data-layout=vertical][data-sidebartype=full] .page-wrapper {
-    margin-right: 270px
-}
-
-/*html[dir=rtl] body,*/
-/*.h1,*/
-/*h1 .h2,*/
-/*h2 .h3,*/
-/*h3 .h4,*/
-/*h4 .h5,*/
-/*h5 .h6,*/
-/*h6,*/
-/*a,*/
-/*p {*/
-/*    text-align: right !important;*/
-/*}*/
-
-html[dir=rtl] body .dashboard .d-heading {
-    text-align: right;
-}
-
-html[dir=rtl] body .left-content {
-    justify-content: end;
-}
-
-html[dir=rtl] body .profile-dropdown {
-    display: flex;
-    margin-right: 34px;
-    margin-left: 30px;
-}
-
-html[dir=rtl] body .navbar-nav {
-    padding-right: 5rem;
-    width: 100%;
-}
-
-html[dir=rtl] body .white-box .box-title {
-    padding-right: 9px;
-}
-
-html[dir=rtl] body .profile-dropdown .name {
-    margin-right: 0.5rem!important;
-}
-
-html[dir=ltr] body .profile-dropdown .name {
-    margin-left: 0.5rem!important;
-}
-
-html[dir=rtl] body .profile-dropdown svg {
-    margin-top: 8px;
-    margin-right: 10px;
-}
-
-html[dir=rtl] body .navbar-brand {
-    padding: 44px 44px 49px 67px;
-    display: block;
-}
-
-html[dir=rtl] body .sidebar-nav ul .sidebar-item .sidebar-link {
-    padding: 12px 25px 12px 55px;
-    display: flex;
-    white-space: nowrap;
-    -webkit-box-align: center;
-    align-items: center;
-    gap: 16px;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 20px;
-    letter-spacing: 0px;
 }
