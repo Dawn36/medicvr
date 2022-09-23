@@ -105,6 +105,11 @@
     #main-wrapper[data-layout=vertical] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul {
         background: {{$primaryColor}};
     }
+    
+    .custom-widgets-icon {
+        background-color: {{$primaryColor}};
+    }
+        
     .dropdown-item.active, .dropdown-item:active {
     color: #fff;
     text-decoration: none;

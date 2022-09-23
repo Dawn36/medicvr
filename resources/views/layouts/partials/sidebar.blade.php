@@ -6,8 +6,8 @@
             <span class="logo-text">
                 <!-- dark Logo text -->
                 @if(!Auth::user()->hasRole('superadmin'))
-                <img src="{{ asset($hospitalSession->hospital_hi_rest_logo)}}" class="lg-logo" alt="homepage" />
-                <img src="{{ asset($hospitalSession->hospital_hi_rest_logo)}}" class="sm-logo" alt="">
+                <img src="{{ asset($hospitalSession->hospital_hi_rest_logo)}}" class="lg-logo" alt="homepage" style="width: 10rem;" />
+                <img src="{{ asset($hospitalSession->hospital_small_logo)}}" class="sm-logo" alt="" style="width: 3rem; margin-left: -40px; margin-right: -33px;">
                 @else
                 <img src="{{ asset('theme/assets/imges/dashboard-logo.png')}}" class="lg-logo" alt="homepage" />
                 <img src="{{ asset('theme/assets/imges/sm-logo.jpeg')}}" class="sm-logo" alt="">

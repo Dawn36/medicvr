@@ -5031,7 +5031,7 @@ html[dir=ltr] body .navbar-brand {
     font-size: 1.09375rem;
     text-decoration: none;
     white-space: nowrap;
-    background-color: #054B4F;
+    /*background-color: #054B4F;*/
 }
 
 .navbar-nav {
@@ -16348,4 +16348,9 @@ html[dir=rtl] body .sidebar-nav ul .sidebar-item .sidebar-link {
     font-weight: 600;
     line-height: 20px;
     letter-spacing: 0px;
+}
+
+.departments-tabs {
+    border-radius: 5px !important;
+    margin-right: 5px !important;
 }
