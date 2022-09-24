@@ -19,6 +19,9 @@
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">{{__('gobal.Session')}}</button>
                 </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-department-tab" data-bs-toggle="pill" data-bs-target="#pills-department" type="button" role="tab" aria-controls="pills-department" aria-selected="false">Department</button>
+                </li>
             </ul>
             @if(!Auth::user()->hasRole('student'))
             <div class="d-flex align-items-center justify-content-between py-4 nav-tab-heading">
@@ -192,6 +195,141 @@
                                     @endfor
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade covid" id="pills-department" role="tabpanel" aria-labelledby="pills-department-tab">
+                <div class="gernal-info bg-white">
+                    <div class="block">
+                        <div class="d-flex justify-content-between">
+                            <h3 class="heading">Departments</h3>
+                        </div>
+
+                        <!-- Department -->
+                        <div class="pt-1">
+                            <ul class="nav nav-pills forms-tabs" id="pills-tab" role="tablist">
+                                @for($i=0; $i< count($sessionDepartmentTab); $i++)
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link departments-tabs {{$i == 0 ? 'active' : ''}}" id="pills-emergency-tab" data-bs-toggle="pill" data-bs-target="#pills-{{ucwords($sessionDepartmentTab[$i]->department_name)}}" type="button" role="tab" aria-controls="pills-emergency" aria-selected="false">{{ucwords($sessionDepartmentTab[$i]->department_name)}}</button>
+                                </li>
+                                @endfor
+                                
+                            </ul>
+
+                            <!-- Scenarios -->
+                            <div class="tab-content">
+                                @for($i=0; $i< count($sessionDepartmentTab); $i++)
+                                <div class="tab-pane fade show {{ $i == 0 ? 'active' : ''}}" id="pills-{{ucwords($sessionDepartmentTab[$i]->department_name)}}" role="tabpanel" aria-labelledby="pills-emergency-tab">
+                                    <div class="gernal-info bg-white">
+                                        <div class="mt-5">
+                                            <div class="d-flex justify-content-between">
+                                                <h3 class="heading">Scenarios</h3>
+                                            </div>
+                                            <p class="mb-3">All the Scenarios of this Department</p>
+                                            @php 
+                                            $sName=explode(",",$sessionDepartmentTab[$i]->s_name);
+                                            $sId=explode(",",$sessionDepartmentTab[$i]->s_id);
+                                            
+                                            @endphp
+                                            <ul class="nav nav-pills forms-tabs" id="pills-tab" role="tablist">
+                                                @for($j=0; $j< count($sName); $j++)
+                                                <li class="nav-item" role="presentation">
+                                                    <button class="nav-link departments-tabs {{$j == 0 && $i == 0 ? 'active' : ''}}" id="pills-covid-tab" data-bs-toggle="pill" data-bs-target="#pills-{{ucwords($sName[$j])}}" type="button" role="tab" aria-controls="pills-covid" aria-selected="true">{{ucwords($sName[$j])}}</button>
+                                                </li>
+                                                @endfor
+                                            </ul>
+                                            <div class="tab-content">
+                                                @for($j=0; $j< count($sName); $j++)
+                                                @php  $data=\App\Http\Controllers\UserController::showTab($sessionDepartmentTab[$i]->department_id,$sId[$j],$student->id) @endphp
+                                                <div class="tab-pane fade show {{$j == 0 && $i == 0 ? 'active' : ''}}" id="pills-{{ucwords($sName[$j])}}" role="tabpanel" aria-labelledby="pills-covid-tab">
+                                                    <div class="gernal-info bg-white">
+                                                        <div class="mt-5">
+                                                            <div class="d-flex justify-content-center">
+                                                                <h3 class="fw-bolder fs-8 text-center mb-4">{{ucwords($sName[$j])}}</h3>
+                                                            </div>
+                                                            <div class="row justify-content-center">
+                                                                <div class="col-lg-3 col-md-12">
+                                                                    <div class="white-box analytics-info">
+                                                                        <div class="d-flex">
+                                                                            <img src="{{ asset('theme/assets/imges/hospital.svg')}}" class="sidebar-icon custom-widgets-icon" alt="">
+                                                                            <p class="box-title mb-0">You Played</p>
+                                                                        </div>
+                                                                        <div class="box-data">
+                                                                            @php 
+                                                                            $dataArr=array();
+                                                                            for ($k=0; $k < count($data) ; $k++) {
+                                                                                array_push($dataArr,  $data[$k]->time_taken);
+                                                                            }
+                                                                            @endphp
+                                                                            <p class="bx-value mb-0">{{array_sum($dataArr)}} min Times</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-3 col-md-12">
+                                                                    <div class="white-box analytics-info">
+                                                                        <div class="d-flex">
+                                                                            <img src="{{ asset('theme/assets/imges/sessions.svg')}}" class="sidebar-icon custom-widgets-icon" alt="">
+                                                                            <p class="box-title mb-0">Your Average Score Is</p>
+                                                                        </div>
+                                                                        <div class="box-data">
+                                                                            <p class="bx-value mb-0">{{number_format(array_sum($dataArr)/count($data),2)}}</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-3 col-md-12">
+                                                                    <div class="white-box analytics-info">
+                                                                        <div class="d-flex">
+                                                                            <img src="{{ asset('theme/assets/imges/sessions.svg')}}" class="sidebar-icon custom-widgets-icon" alt="">
+                                                                            <p class="box-title mb-0">Your Best Score Is</p>
+                                                                        </div>
+                                                                        <div class="box-data">
+                                                                            <p class="bx-value mb-0">{{max($dataArr)}}</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-lg-12">
+                                                                    <div class="table-responsive" style="padding-top:28px;">
+                                                                        <table class="table no-wrap" id="myTable">
+                                                                            <thead>
+                                                                                <tr style="background: #F9F9FA; border-radius: 6px;">
+                                                                                    <th class="border-top-0">ID</th>
+                                                                                    <th class="border-top-0">Scenario Name</th>
+                                                                                    <th class="border-top-0">Department Name</th>
+                                                                                    <th class="border-top-0">Score</th>
+                                                                                    <th class="border-top-0">Time Taken</th>
+                                                                                    <th class="border-top-0">Date</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                @for ($k=0; $k < count($data) ; $k++) @php $a=$k; $a++ @endphp
+                                                                                <tr>
+                                                                                    <td><a href="{{route('student_session_details',$data[$k]->id)}}" class="fw-bolder text-theme">{{$a}}</a></td>
+                                                                                    <td><a href="{{route('student_session_details',$data[$k]->id)}}" class="fw-bolder text-theme">{{ucwords($data[$k]->s_name)}}</a></td>
+                                                                                    <td><a href="{{route('student_session_details',$data[$k]->id)}}" class="fw-bolder text-theme">{{ucwords($data[$k]->d_name)}}</a></td>
+                                                                                    <td>{{$data[$k]->score}}</td>
+                                                                                    <td>{{$data[$k]->time_taken}} mins</td>
+                                                                                    <td>{{Date("Y-m-d",strtotime($data[$k]->created_at))}}</td>
+                                                                                </tr>
+                                                                                @endfor
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                @endfor
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endfor
+                            </div>
                         </div>
                     </div>
                 </div>

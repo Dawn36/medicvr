@@ -200,12 +200,33 @@ class UserController extends Controller
         {
             $student=User::with('hospitals')->find($userId);
             // $session=DB::table('game_session')->where('user_id',$userId)->get();
+            $sessionDepartmentTab = DB::select(DB::raw("SELECT 
+            GROUP_CONCAT(DISTINCT(d.`name`)) AS department_name, 
+            GROUP_CONCAT(DISTINCT(d.`id`)) AS department_id,
+            GROUP_CONCAT(DISTINCT(s.`id`)) AS s_id,
+             GROUP_CONCAT(DISTINCT(s.name)) AS s_name
+            FROM
+              `game_session` gs 
+              INNER JOIN `scenarios` s 
+                ON gs.`scenario_id` = s.`id` 
+              INNER JOIN `departments` d 
+                ON d.`id` = s.`department_id` 
+                WHERE  gs.`user_id`='$userId'
+                GROUP BY d.`name`"));
+                //d.`deleted_at` IS NULL AND s.`deleted_at` IS NULL AND
             $session = DB::select(DB::raw("SELECT gs.`id`,s.`name` AS s_name,d.`name` AS d_name,gs.`score`,gs.`time_taken`,gs.`created_at` FROM `game_session` gs INNER JOIN `scenarios` s ON gs.`scenario_id`=s.`id`
             INNER JOIN `departments` d ON d.`id`= s.`department_id` WHERE gs.`user_id`='$userId'"));
-            return view('student/student_show', compact('student','session'));
+            return view('student/student_show', compact('student','session','sessionDepartmentTab'));
         }
        
      
+    }
+    public static function showTab($departmentId,$sId,$userId)
+    {
+        $data = DB::select(DB::raw("SELECT gs.`id`,s.`name` AS s_name,d.`name` AS d_name,gs.`score`,gs.`time_taken`,gs.`created_at` FROM `game_session` gs INNER JOIN `scenarios` s ON gs.`scenario_id`=s.`id`
+        INNER JOIN `departments` d ON d.`id`= s.`department_id` WHERE gs.`user_id`='$userId' AND s.`id`='$sId' AND d.id='$departmentId'"));
+    
+        return $data;
     }
 
 
