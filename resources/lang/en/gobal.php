@@ -110,4 +110,10 @@ return [
     'Scenario'=>'Scenario',
     'Map Scenario to Hospital'=>'Map Scenario to Hospital',
     'Scenario Mapping Add'=>'Scenario Mapping Add',
+    'Department'=>'Department',
+    'No. of Sessions played by this Student'=>'No. of Sessions played by this Student',
+    'All the Scenarios of this Department'=>'All the Scenarios of this Department',
+    'You Played'=>'You Played',
+    'Your Average Score Is'=>'Your Average Score Is',
+    'Your Best Score Is'=>'Your Best Score Is',
 ];

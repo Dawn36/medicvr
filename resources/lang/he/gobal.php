@@ -110,5 +110,11 @@ return [
     'Scenario'=>'תַרחִישׁ',
     'Map Scenario to Hospital'=>'מפה תרחיש לבית החולים',
     'Scenario Mapping Add'=>'מיפוי תרחיש הוסף',
+    'Department'=>'מַחלָקָה',
+    'No. of Sessions played by this Student'=>'מספר מפגשים ששיחק תלמיד זה',
+    'All the Scenarios of this Department'=>'כל התסריטים של המחלקה הזו',
+    'You Played'=>'שיחקת',
+    'Your Average Score Is'=>'הציון הממוצע שלך הוא',
+    'Your Best Score Is'=>'הציון הטוב ביותר שלך הוא',
     
 ];

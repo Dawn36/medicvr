@@ -20,7 +20,7 @@
                     <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">{{__('gobal.Session')}}</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="pills-department-tab" data-bs-toggle="pill" data-bs-target="#pills-department" type="button" role="tab" aria-controls="pills-department" aria-selected="false">Department</button>
+                    <button class="nav-link" id="pills-department-tab" data-bs-toggle="pill" data-bs-target="#pills-department" type="button" role="tab" aria-controls="pills-department" aria-selected="false">{{__('gobal.Department')}}</button>
                 </li>
             </ul>
             @if(!Auth::user()->hasRole('student'))
@@ -55,7 +55,7 @@
                                 <p class="text-dark">{{ucwords($student->last_name)}}</p>
                             </div>
                             <div class="col-md-6 pb-2">
-                                <label class="fw-bold">{{__('gobal.Hospital Name')}}</label>
+                                <label class="fw-bold">{{__('gobal.hospital_name')}}</label>
                                 <p class="text-dark">{{ucwords($student->hospitals->hospital_name)}}</p>
                             </div>
                             <div class="col-md-6 pb-2">
@@ -166,9 +166,9 @@
                 <div class="gernal-info bg-white">
                     <div class="block">
                         <div class="d-flex justify-content-between">
-                            <h3 class="heading">Sessions</h3>
+                            <h3 class="heading">{{__('gobal.Session')}}</h3>
                         </div>
-                        <p class="mb-3">No. of Sessions played by this Student</p>
+                        <p class="mb-3">{{__('gobal.No. of Sessions played by this Student')}}</p>
 
                         <div class="table-responsive" style="padding-top:28px;">
                             <table class="table no-wrap" id="myTable">
@@ -203,7 +203,7 @@
                 <div class="gernal-info bg-white">
                     <div class="block">
                         <div class="d-flex justify-content-between">
-                            <h3 class="heading">Departments</h3>
+                            <h3 class="heading">{{__('gobal.Department')}}</h3>
                         </div>
 
                         <!-- Department -->
@@ -224,9 +224,9 @@
                                     <div class="gernal-info bg-white">
                                         <div class="mt-5">
                                             <div class="d-flex justify-content-between">
-                                                <h3 class="heading">Scenarios</h3>
+                                                <h3 class="heading">{{__('gobal.Session')}}</h3>
                                             </div>
-                                            <p class="mb-3">All the Scenarios of this Department</p>
+                                            <p class="mb-3">{{__('gobal.All the Scenarios of this Department')}}</p>
                                             @php 
                                             $sName=explode(",",$sessionDepartmentTab[$i]->s_name);
                                             $sId=explode(",",$sessionDepartmentTab[$i]->s_id);
@@ -253,7 +253,7 @@
                                                                     <div class="white-box analytics-info">
                                                                         <div class="d-flex">
                                                                             <img src="{{ asset('theme/assets/imges/hospital.svg')}}" class="sidebar-icon custom-widgets-icon" alt="">
-                                                                            <p class="box-title mb-0">You Played</p>
+                                                                            <p class="box-title mb-0">{{__('gobal.You Played')}}</p>
                                                                         </div>
                                                                         <div class="box-data">
                                                                             @php 
@@ -270,7 +270,7 @@
                                                                     <div class="white-box analytics-info">
                                                                         <div class="d-flex">
                                                                             <img src="{{ asset('theme/assets/imges/sessions.svg')}}" class="sidebar-icon custom-widgets-icon" alt="">
-                                                                            <p class="box-title mb-0">Your Average Score Is</p>
+                                                                            <p class="box-title mb-0">{{__('gobal.Your Average Score Is')}}</p>
                                                                         </div>
                                                                         <div class="box-data">
                                                                             <p class="bx-value mb-0">{{number_format(array_sum($dataArr)/count($data),2)}}</p>
@@ -281,7 +281,7 @@
                                                                     <div class="white-box analytics-info">
                                                                         <div class="d-flex">
                                                                             <img src="{{ asset('theme/assets/imges/sessions.svg')}}" class="sidebar-icon custom-widgets-icon" alt="">
-                                                                            <p class="box-title mb-0">Your Best Score Is</p>
+                                                                            <p class="box-title mb-0">{{__('gobal.Your Best Score Is')}}</p>
                                                                         </div>
                                                                         <div class="box-data">
                                                                             <p class="bx-value mb-0">{{max($dataArr)}}</p>
@@ -295,12 +295,12 @@
                                                                         <table class="table no-wrap" id="myTable">
                                                                             <thead>
                                                                                 <tr style="background: #F9F9FA; border-radius: 6px;">
-                                                                                    <th class="border-top-0">ID</th>
-                                                                                    <th class="border-top-0">Scenario Name</th>
-                                                                                    <th class="border-top-0">Department Name</th>
-                                                                                    <th class="border-top-0">Score</th>
-                                                                                    <th class="border-top-0">Time Taken</th>
-                                                                                    <th class="border-top-0">Date</th>
+                                                                                    <th class="border-top-0">{{__('gobal.id')}}</th>
+                                                                                    <th class="border-top-0">{{__('gobal.Scenario Name')}}</th>
+                                                                                    <th class="border-top-0">{{__('gobal.Department Name')}}</th>
+                                                                                    <th class="border-top-0">{{__('gobal.Score')}}</th>
+                                                                                    <th class="border-top-0">{{__('gobal.Time Taken')}}</th>
+                                                                                    <th class="border-top-0">{{__('gobal.Date')}}</th>
                                                                                 </tr>
                                                                             </thead>
                                                                             <tbody>

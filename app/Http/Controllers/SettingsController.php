@@ -110,7 +110,7 @@ class SettingsController extends Controller
         }
         $user->localization =$lang;
         $user->save();
-        return redirect()->back();
+        return redirect()->route('dashboard');
     }
     /**
      * Update the specified resource in storage.
