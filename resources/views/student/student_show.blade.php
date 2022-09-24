@@ -257,12 +257,14 @@
                                                                         </div>
                                                                         <div class="box-data">
                                                                             @php 
-                                                                            $dataArr=array();
+                                                                            $dataArrTime=array();
+                                                                            $dataArrScore=array();
                                                                             for ($k=0; $k < count($data) ; $k++) {
-                                                                                array_push($dataArr,  $data[$k]->time_taken);
+                                                                                array_push($dataArrTime,  $data[$k]->time_taken);
+                                                                                array_push($dataArrScore,  $data[$k]->score);
                                                                             }
                                                                             @endphp
-                                                                            <p class="bx-value mb-0">{{array_sum($dataArr)}} min Times</p>
+                                                                            <p class="bx-value mb-0">{{array_sum($dataArrTime)}} min Times</p>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -273,7 +275,7 @@
                                                                             <p class="box-title mb-0">{{__('gobal.Your Average Score Is')}}</p>
                                                                         </div>
                                                                         <div class="box-data">
-                                                                            <p class="bx-value mb-0">{{number_format(array_sum($dataArr)/count($data),2)}}</p>
+                                                                            <p class="bx-value mb-0">{{number_format(array_sum($dataArrScore)/count($data),2)}}</p>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -284,7 +286,7 @@
                                                                             <p class="box-title mb-0">{{__('gobal.Your Best Score Is')}}</p>
                                                                         </div>
                                                                         <div class="box-data">
-                                                                            <p class="bx-value mb-0">{{max($dataArr)}}</p>
+                                                                            <p class="bx-value mb-0">{{max($dataArrScore)}}</p>
                                                                         </div>
                                                                     </div>
                                                                 </div>
