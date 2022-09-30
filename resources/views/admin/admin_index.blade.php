@@ -33,6 +33,9 @@
                                             {{__('gobal.email')}}
                                         </th>
                                         <th class="border-top-0">
+                                            {{__('gobal.unique_id')}}
+                                        </th>
+                                        <th class="border-top-0">
                                             {{__('gobal.created_on')}}
                                         </th>
                                     </tr>
@@ -51,6 +54,8 @@
                                         <td class="txt-oflo">{{ucwords($admin[$i]->last_name)}}</td>
                                         <td>{{ucwords($admin[$i]->hospitals->hospital_name)}}</td>
                                         <td>{{$admin[$i]->email}}</td>
+                                        <td>{{$admin[$i]->unique_id}}</td>
+
                                         <td>{{date("Y-m-d",strtotime($admin[$i]->created_at))}}</td>
                                     </tr>
                                     @endfor

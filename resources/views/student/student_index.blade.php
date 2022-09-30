@@ -27,10 +27,16 @@
                                             {{__('gobal.last_name')}}
                                         </th>
                                         <th class="border-top-0">
+                                            {{__('gobal.hospital_name')}} 
+                                        </th>
+                                        <th class="border-top-0">
                                             {{__('gobal.phone')}}
                                         </th>
                                         <th class="border-top-0">
                                             {{__('gobal.email')}}
+                                        </th>
+                                        <th class="border-top-0">
+                                            {{__('gobal.unique_id')}}
                                         </th>
                                         <th class="border-top-0">
                                             {{__('gobal.created_on')}}
@@ -50,7 +56,9 @@
                                             </form>
                                         <td class="txt-oflo">{{ucwords($student[$i]->last_name)}}</td>
                                         <td>{{ucwords($student[$i]->hospitals->hospital_name)}}</td>
+                                        <td>{{$student[$i]->phone_number}}</td>
                                         <td>{{$student[$i]->email}}</td>
+                                        <td>{{$student[$i]->unique_id}}</td>
                                         <td>{{date("Y-m-d",strtotime($student[$i]->created_at))}}</td>
                                     </tr>
                                     @endfor

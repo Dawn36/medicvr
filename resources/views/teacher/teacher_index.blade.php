@@ -33,6 +33,9 @@
                                             {{__('gobal.email')}}
                                         </th>
                                         <th class="border-top-0">
+                                            {{__('gobal.unique_id')}}
+                                        </th>
+                                        <th class="border-top-0">
                                             {{__('gobal.created_on')}}
                                         </th>
                                     </tr>
@@ -51,6 +54,7 @@
                                         <td class="txt-oflo">{{ucwords($teacher[$i]->last_name)}}</td>
                                         <td>{{$teacher[$i]->phone_number}}</td>
                                         <td>{{$teacher[$i]->email}}</td>
+                                        <td>{{$teacher[$i]->unique_id}}</td>
                                         <td>{{date("Y-m-d",strtotime($teacher[$i]->created_at))}}</td>
                                     </tr>
                                     @endfor

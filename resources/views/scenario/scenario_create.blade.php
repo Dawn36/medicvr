@@ -21,7 +21,7 @@
                                 </div>
                                 <div class="col-md-6 pb-2">
                                     <label>{{__('gobal.Scenario id')}}<span class="required">*</span></label>
-                                    <input type="number" name="scenario_id" placeholder="{{__('gobal.Enter Scenario id')}}" class="form-control" required>
+                                    <input type="text" name="scenario_id" placeholder="{{__('gobal.Enter Scenario id')}}" class="form-control" required>
                                 </div>
                                 <div class="col-md-6 pb-2">
                                     <label>{{__('gobal.Scenario logo')}}<span class="required">*</span></label>
