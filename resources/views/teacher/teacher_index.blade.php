@@ -30,6 +30,9 @@
                                             {{__('gobal.phone')}} 
                                         </th>
                                         <th class="border-top-0">
+                                            {{__('gobal.hospital')}}
+                                        </th>
+                                        <th class="border-top-0">
                                             {{__('gobal.email')}}
                                         </th>
                                         <th class="border-top-0">
@@ -53,6 +56,7 @@
                                             </form>
                                         <td class="txt-oflo">{{ucwords($teacher[$i]->last_name)}}</td>
                                         <td>{{$teacher[$i]->phone_number}}</td>
+                                        <td>{{ucwords($teacher[$i]->hospitals->hospital_name)}}</td>
                                         <td>{{$teacher[$i]->email}}</td>
                                         <td>{{$teacher[$i]->unique_id}}</td>
                                         <td>{{date("Y-m-d",strtotime($teacher[$i]->created_at))}}</td>
