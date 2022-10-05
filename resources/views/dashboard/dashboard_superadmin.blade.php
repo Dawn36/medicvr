@@ -102,7 +102,7 @@
                                 <div class="white-box analytics-info">
                                     <div class="d-flex">
                                         <img src="{{ asset('theme/assets/imges/hospital.svg')}}" class="sidebar-icon custom-widgets-icon" alt="">
-                                        <p class="box-title mb-0">{{__("dashboard.Sessions Played")}}</p>
+                                        <p class="box-title mb-0">{{__("dashboard.Number of Admins")}}</p>
                                     </div>
                                     <div class="box-data">
                                         <p class="bx-value mb-0">{{$data['hospital_listing'][$i]->admin_count}}</p>
