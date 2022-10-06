@@ -29,7 +29,6 @@ class ScenarioMappingController extends Controller
         $hospitalId=$request->hospitalId;
         $scenariosId=ScenarioMapping::where('hospital_id',$hospitalId)->pluck('scenarios_id')->toArray();
         $scenario=Scenario::whereNotIn('id',$scenariosId)->get();
-
         return view('scenario-mapping/scenario_mapping_create',compact('scenario','hospitalId'));
     }
 
@@ -47,7 +46,6 @@ class ScenarioMappingController extends Controller
             'hospital_id' => ['required'],
             
         ]);
-      
         $data = ScenarioMapping::create([
             'hospital_id' => $request->hospital_id,
             'scenarios_id' => $request->scenario_id,

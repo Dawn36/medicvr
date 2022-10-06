@@ -19,7 +19,7 @@
                                 <thead>
                                     <tr style="background: #F9F9FA; border-radius: 6px;">
                                         <th class="border-top-0">
-                                            {{__('gobal.id')}}
+                                            #
                                         </th>
                                         <th class="border-top-0">
                                             {{__('gobal.Scenario id')}}
@@ -41,7 +41,7 @@
                                     @for ($i = 0; $i < count($scenario); $i++) @php $a=$i; $a++ @endphp
                                     <tr>
                                         <td>{{$a}}</td>
-                                        <td>{{$scenario[$i]->sce_id}}</td>
+                                        <td>{{$scenario[$i]->id}}</td>
                                         <td class="txt-oflo"><a href="{{route('scenario.show',$scenario[$i]->id)}}" class="fw-bolder text-theme">{{ucwords($scenario[$i]->secnario_name)}}</a></td>
                                         <td >{{ucwords($scenario[$i]->name)}}</td>
                                         <td>{{date('Y-m-d',strtotime($scenario[$i]->created_at))}}</td>

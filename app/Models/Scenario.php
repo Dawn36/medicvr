@@ -9,9 +9,11 @@ use App\Models\Department;
 
 class Scenario extends Model
 {
-    use HasFactory , SoftDeletes;
+    use HasFactory ;
     protected $fillable = [
-        'user_id','sce_id','department_id','name','path','file_name','deleted_at','created_at','updated_at',
+        'id','user_id','department_id','name','path','file_name','deleted_at','created_at','updated_at',
     ];
+    
+    public $incrementing = false;
    
 }

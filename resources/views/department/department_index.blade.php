@@ -20,7 +20,7 @@
                             <table class="table no-wrap" id="myTable">
                                 <thead>
                                     <tr style="background: #F9F9FA; border-radius: 6px;">
-                                        <th class="border-top-0">{{__('gobal.id')}}</th>
+                                        <th class="border-top-0">#</th>
                                         <th class="border-top-0">
                                             {{__('gobal.Department Name')}}
                                         </th>

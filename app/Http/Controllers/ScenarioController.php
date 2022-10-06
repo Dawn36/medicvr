@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use App\Models\Department;
+use Illuminate\Validation\Rule;
+
 
 class ScenarioController extends Controller
 {
@@ -20,7 +22,7 @@ class ScenarioController extends Controller
     {
         $scenario=DB::table('scenarios AS s')
         ->join('departments AS d', 's.department_id', '=', 'd.id')
-        ->select(DB::raw('s.id,s.`name` AS secnario_name,s.`sce_id`,s.`created_at`,d.`name`'))
+        ->select(DB::raw('s.id,s.`name` AS secnario_name,s.`created_at`,d.`name`'))
         ->whereNull('d.deleted_at')
         ->whereNull('s.deleted_at')->get();
 
@@ -38,7 +40,6 @@ class ScenarioController extends Controller
         return view('scenario/scenario_create',compact('department'));
         
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -49,7 +50,10 @@ class ScenarioController extends Controller
     {
         $userId=Auth::user()->id;
         $request->validate([
-            'scenario_id' => ['required'],
+            'id' => [
+                'required',
+                Rule::unique('scenarios')->whereNull('deleted_at'),
+            ],
             'scenario_name' => ['required'],
             'department_id' => ['required'],
         ]);
@@ -62,10 +66,10 @@ class ScenarioController extends Controller
                 $path = 'uploads/scenario/' . $userId . "/" . $file_name;
 
         }
-
+      
         $data = Scenario::create([
             'name' => $request->scenario_name,
-            'sce_id' => $request->scenario_id,
+            'id' => $request->id,
             'department_id' => $request->department_id,
             'path' => $path,
             'file_name' => $file_name,
@@ -82,11 +86,11 @@ class ScenarioController extends Controller
      * @param  \App\Models\Scenario  $scenario
      * @return \Illuminate\Http\Response
      */
-    public function show(int $id)
+    public function show($id)
     {
         $scenario=DB::table('scenarios AS s')
         ->join('departments AS d', 's.department_id', '=', 'd.id')
-        ->select(DB::raw('s.id,s.`name` AS secnario_name,s.`sce_id`,s.`created_at`,d.`name`,d.`path` AS d_path,s.`path`'))
+        ->select(DB::raw('s.id,s.`name` AS secnario_name,s.`created_at`,d.`name`,d.`path` AS d_path,s.`path`'))
         ->where('s.id',$id)
         ->get();
 
@@ -118,7 +122,7 @@ class ScenarioController extends Controller
         $scenario = Scenario::find($id);
         $request->validate([
             'scenario_name' => ['required'],
-            'scenario_id' => ['required'],
+            'id' => ['required'],
             'department_id' => ['required'],
         ]);
 
@@ -137,7 +141,7 @@ class ScenarioController extends Controller
         
         
         $scenario['name'] = $request->scenario_name;
-        $scenario['sce_id'] = $request->scenario_id;
+        $scenario['id'] = $request->id;
         $scenario['department_id'] = $request->department_id;
         $scenario['user_id'] = $userId;
         $scenario['updated_at'] = date("Y-m-d");
@@ -152,7 +156,7 @@ class ScenarioController extends Controller
      * @param  \App\Models\Scenario  $scenario
      * @return \Illuminate\Http\Response
      */
-    public function destroy(int $id)
+    public function destroy($id)
     {
         $data = Scenario::find($id);
         $data->delete();

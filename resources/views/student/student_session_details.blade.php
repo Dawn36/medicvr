@@ -54,7 +54,7 @@
                             <table class="table table-striped table-hover">
                                 <thead>
                                     <tr>
-                                        <th scope="col" class="border-top-0 fw-bold fs-4 text-dark">{{__('gobal.id')}}</th>
+                                        <th scope="col" class="border-top-0 fw-bold fs-4 text-dark">#</th>
                                         <th scope="col" class="border-top-0 fw-bold fs-4 text-dark w-50">{{__('gobal.Questions')}}</th>
                                         <th scope="col" class="border-top-0 fw-bold fs-4 text-dark">{{__('gobal.Score')}}</th>
                                         <th scope="col" class="border-top-0 fw-bold fs-4 text-dark">{{__('gobal.Date')}}</th>
@@ -86,7 +86,7 @@
                             <table class="table table-striped table-hover">
                                 <thead>
                                     <tr>
-                                        <th scope="col" class="border-top-0 fw-bold fs-4 text-dark">{{__('gobal.id')}}</th>
+                                        <th scope="col" class="border-top-0 fw-bold fs-4 text-dark">#</th>
                                         <th scope="col" class="border-top-0 fw-bold fs-4 text-dark w-50">{{__('gobal.Procedures')}}</th>
                                         <th scope="col" class="border-top-0 fw-bold fs-4 text-dark">{{__('gobal.Time')}}</th>
                                         <th scope="col" class="border-top-0 fw-bold fs-4 text-dark">{{__('gobal.Date')}}</th>
