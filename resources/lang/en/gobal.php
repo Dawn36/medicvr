@@ -116,4 +116,7 @@ return [
     'You Played'=>'You Played',
     'Your Average Score Is'=>'Your Average Score Is',
     'Your Best Score Is'=>'Your Best Score Is',
+    'Total Score'=>'Total Score',
+    'Obtain Score'=>'Obtain Score',
+    'Procedures'=>'Procedures'
 ];

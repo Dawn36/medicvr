@@ -16,6 +16,26 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`laravel` /*!40100 DEFAULT CHARACTER SET
 
 USE `laravel`;
 
+/*Table structure for table `departments` */
+
+DROP TABLE IF EXISTS `departments`;
+
+CREATE TABLE `departments` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` bigint(20) DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `path` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+/*Data for the table `departments` */
+
+insert  into `departments`(`id`,`user_id`,`name`,`path`,`file_name`,`deleted_at`,`created_at`,`updated_at`) values (1,22,'dawna','uploads/department/22/202209121847facebook.png','202209121847facebook.png','2022-09-12 18:48:22','2022-09-12 06:40:13','2022-09-12 18:48:22'),(2,22,'aa','uploads/department/22/1663008512l2.png','1663008512l2.png',NULL,'2022-09-12 06:48:32','2022-09-12 18:48:32'),(3,22,'aaw','uploads/department/22/1663008522play-button.png','1663008522play-button.png',NULL,'2022-09-12 06:48:42','2022-09-12 18:48:42');
+
 /*Table structure for table `failed_jobs` */
 
 DROP TABLE IF EXISTS `failed_jobs`;
@@ -33,6 +53,62 @@ CREATE TABLE `failed_jobs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `failed_jobs` */
+
+/*Table structure for table `game_session` */
+
+DROP TABLE IF EXISTS `game_session`;
+
+CREATE TABLE `game_session` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `hospitals_id` bigint(20) DEFAULT NULL,
+  `user_id` bigint(20) DEFAULT NULL,
+  `scenario_id` bigint(20) DEFAULT NULL,
+  `score` varchar(255) DEFAULT NULL,
+  `time_taken` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+
+/*Data for the table `game_session` */
+
+insert  into `game_session`(`id`,`hospitals_id`,`user_id`,`scenario_id`,`score`,`time_taken`,`created_at`) values (1,1,18,1,'52','2000','2022-09-15 18:09:17'),(2,1,18,1,'52','20','2022-09-16 18:09:17'),(3,1,18,1,'50','50','2022-09-16 18:09:17'),(4,1,18,2,'4','2','2022-09-16 00:00:00'),(5,1,18,2,'4','2','2022-09-16 00:00:00'),(6,1,18,3,'4','2','2022-09-16 00:00:00'),(7,1,18,1,'4','2','2022-09-16 00:00:00'),(8,1,18,1,'4','2','2022-09-16 00:00:00'),(9,1,18,1,'4','2','2022-09-16 00:00:00'),(10,1,18,1,'4','2','2022-09-16 00:00:00'),(11,1,18,1,'4','2','2022-09-16 00:00:00'),(12,1,18,1,'56','2','2022-09-16 00:00:00'),(13,1,18,1,'4','2','2022-10-11 00:00:00'),(14,1,18,1,'4','2','2022-10-11 00:00:00'),(15,1,18,1,'4','2','2022-10-11 09:34:57');
+
+/*Table structure for table `game_session_procedure` */
+
+DROP TABLE IF EXISTS `game_session_procedure`;
+
+CREATE TABLE `game_session_procedure` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `user_id` bigint(20) DEFAULT NULL,
+  `game_session_id` bigint(20) DEFAULT NULL,
+  `procedure` varchar(255) DEFAULT NULL,
+  `time` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+
+/*Data for the table `game_session_procedure` */
+
+insert  into `game_session_procedure`(`id`,`user_id`,`game_session_id`,`procedure`,`time`,`created_at`) values (1,18,1,'SD','10','2022-09-16 16:09:05'),(2,18,1,'AA','10','2022-09-16 16:09:05'),(3,18,1,'SS','10','2022-09-16 16:09:05'),(4,18,1,'SS','10','2022-09-16 16:09:05'),(5,1,12,'abc','5','2022-09-16 00:00:00'),(6,1,12,'efs','5','2022-09-16 00:00:00'),(7,1,12,'ncd','5','2022-09-16 00:00:00'),(8,18,13,'abc','5','2022-10-11 00:00:00'),(9,18,13,'efs','5','2022-10-11 00:00:00'),(10,18,13,'ncd','5','2022-10-11 00:00:00'),(11,18,14,'abc','5','2022-10-11 00:00:00'),(12,18,14,'efs','5','2022-10-11 00:00:00'),(13,18,14,'ncd','5','2022-10-11 00:00:00'),(14,18,15,'abc','5','2022-10-11 09:34:57'),(15,18,15,'efs','5','2022-10-11 09:34:57'),(16,18,15,'ncd','5','2022-10-11 09:34:57');
+
+/*Table structure for table `game_session_question` */
+
+DROP TABLE IF EXISTS `game_session_question`;
+
+CREATE TABLE `game_session_question` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `user_id` bigint(20) DEFAULT NULL,
+  `game_session_id` bigint(20) DEFAULT NULL,
+  `question` varchar(255) DEFAULT NULL,
+  `score` varchar(255) DEFAULT NULL,
+  `total_score` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+
+/*Data for the table `game_session_question` */
+
+insert  into `game_session_question`(`id`,`user_id`,`game_session_id`,`question`,`score`,`total_score`,`created_at`) values (1,18,1,'asdads','10','100','2022-09-16 16:04:30'),(2,18,1,'asdads','60','70','2022-09-16 16:04:30'),(3,18,1,'asdads','20','50','2022-09-16 16:04:30'),(4,18,1,'asdads','81','80','2022-09-16 16:04:30'),(5,1,9,'abc','5','100','2022-09-16 00:00:00'),(6,1,9,'efs','5','100','2022-09-16 00:00:00'),(7,1,9,'ncd','5','100','2022-09-16 00:00:00'),(8,1,10,'abc','5','100','2022-09-16 00:00:00'),(9,1,10,'efs','5','100','2022-09-16 00:00:00'),(10,1,10,'ncd','5','100','2022-09-16 00:00:00'),(11,1,11,'abc','5','100','2022-09-16 00:00:00'),(12,1,11,'efs','5','100','2022-09-16 00:00:00'),(13,1,11,'ncd','5','100','2022-09-16 00:00:00'),(14,1,12,'abc','5','100','2022-09-16 00:00:00'),(15,1,12,'efs','5','100','2022-09-16 00:00:00'),(16,1,12,'ncd','5','100','2022-09-16 00:00:00'),(17,18,13,'abc','5','100','2022-10-11 00:00:00'),(18,18,13,'efs','5','100','2022-10-11 00:00:00'),(19,18,13,'ncd','5','100','2022-10-11 00:00:00'),(20,18,14,'abc','5','100','2022-10-11 00:00:00'),(21,18,14,'efs','5','100','2022-10-11 00:00:00'),(22,18,14,'ncd','5','100','2022-10-11 00:00:00'),(23,18,15,'abc','5','100','2022-10-11 09:34:57'),(24,18,15,'efs','5','100','2022-10-11 09:34:57'),(25,18,15,'ncd','5','100','2022-10-11 09:34:57');
 
 /*Table structure for table `hospitals` */
 
@@ -57,7 +133,7 @@ CREATE TABLE `hospitals` (
 
 /*Data for the table `hospitals` */
 
-insert  into `hospitals`(`id`,`user_id`,`hospital_name`,`hospital_phone`,`hospital_email`,`hospital_address`,`hospital_small_logo`,`hospital_hi_rest_logo`,`primary_color`,`secondary_color`,`deleted_at`,`created_at`,`updated_at`) values (1,1,'Ivor Keller','31','fivoaah@mailinator.com','In deserunt omnis mo','uploads/hospital/hospital-small-logo/1/202209091321l2.png','uploads/hospital/hospital-hi-rest-logo/1/202209091321l8.png','#e4581f','#cfcbf5',NULL,'2022-09-09 12:38:45','2022-09-09 13:29:58'),(2,1,'Valentine Bray','46','vulyb@mailinator.com','Voluptate ut dolorem','uploads/hospital/hospital-small-logo/1/1662741514play-button.png','uploads/hospital/hospital-hi-rest-logo/1/1662741514l3.png','#c4eee1','#461c45',NULL,'2022-09-09 04:38:34','2022-09-09 16:38:34');
+insert  into `hospitals`(`id`,`user_id`,`hospital_name`,`hospital_phone`,`hospital_email`,`hospital_address`,`hospital_small_logo`,`hospital_hi_rest_logo`,`primary_color`,`secondary_color`,`deleted_at`,`created_at`,`updated_at`) values (1,1,'Ivor Keller','31','fivoaah@mailinator.com','In deserunt omnis mo','uploads/hospital/hospital-small-logo/1/202209091321l2.png','uploads/hospital/hospital-hi-rest-logo/1/202209091321l8.png','#e4581f','#e4581f',NULL,'2022-09-09 12:38:45','2022-09-09 13:29:58'),(2,1,'Valentine Bray','46','vulyb@mailinator.com','Voluptate ut dolorem','uploads/hospital/hospital-small-logo/1/1662741514play-button.png','uploads/hospital/hospital-hi-rest-logo/1/1662741514l3.png','#c4eee1','#461c45',NULL,'2022-09-09 04:38:34','2022-09-09 16:38:34');
 
 /*Table structure for table `migrations` */
 
@@ -68,11 +144,11 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `migrations` */
 
-insert  into `migrations`(`id`,`migration`,`batch`) values (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2016_06_01_000001_create_oauth_auth_codes_table',1),(4,'2016_06_01_000002_create_oauth_access_tokens_table',1),(5,'2016_06_01_000003_create_oauth_refresh_tokens_table',1),(6,'2016_06_01_000004_create_oauth_clients_table',1),(7,'2016_06_01_000005_create_oauth_personal_access_clients_table',1),(8,'2019_08_19_000000_create_failed_jobs_table',1),(9,'2019_12_14_000001_create_personal_access_tokens_table',1),(10,'2022_04_25_175708_add_user_type_to_user',1),(11,'2022_09_08_193524_laratrust_setup_tables',1),(12,'2022_04_22_152107_create_movies_table',2),(13,'2022_09_09_115446_create_hospitals_table',3);
+insert  into `migrations`(`id`,`migration`,`batch`) values (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2016_06_01_000001_create_oauth_auth_codes_table',1),(4,'2016_06_01_000002_create_oauth_access_tokens_table',1),(5,'2016_06_01_000003_create_oauth_refresh_tokens_table',1),(6,'2016_06_01_000004_create_oauth_clients_table',1),(7,'2016_06_01_000005_create_oauth_personal_access_clients_table',1),(8,'2019_08_19_000000_create_failed_jobs_table',1),(9,'2019_12_14_000001_create_personal_access_tokens_table',1),(10,'2022_04_25_175708_add_user_type_to_user',1),(11,'2022_09_08_193524_laratrust_setup_tables',1),(12,'2022_04_22_152107_create_movies_table',2),(13,'2022_09_09_115446_create_hospitals_table',3),(14,'2022_09_12_181421_create_departments_table',4),(15,'2022_09_12_185559_create_scenarios_table',5),(16,'2022_09_19_182345_create_scenario_mappings_table',6);
 
 /*Table structure for table `oauth_access_tokens` */
 
@@ -245,9 +321,11 @@ CREATE TABLE `personal_access_tokens` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
   KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `personal_access_tokens` */
+
+insert  into `personal_access_tokens`(`id`,`tokenable_type`,`tokenable_id`,`name`,`token`,`abilities`,`last_used_at`,`created_at`,`updated_at`) values (1,'App\\Models\\User',1,'authToken','47bb1e98b8ee7854aaeee3dd20aac055135da6970c6bfc878b325adbf20bd41d','[\"*\"]',NULL,'2022-09-10 20:58:30','2022-09-10 20:58:30'),(2,'App\\Models\\User',1,'authToken','a36da48826ee5c3895a9edd755ad5473113a520f8ee62fb7ec125217f3cff139','[\"*\"]',NULL,'2022-09-10 20:58:46','2022-09-10 20:58:46'),(3,'App\\Models\\User',1,'authToken','d4ec19061d702db033eda109b814e27aab91effab74e6a1402b9e5ba4b0277e0','[\"*\"]',NULL,'2022-09-10 20:59:07','2022-09-10 20:59:07'),(4,'App\\Models\\User',1,'authToken','9afa1eb1a00b02663d455b9d6487d81602b3368b1e9113b1cbc4d2dac271e7d3','[\"*\"]',NULL,'2022-09-10 21:01:17','2022-09-10 21:01:17'),(5,'App\\Models\\User',11,'authToken','e0fdc02edfbe0132ff620007e781961b7dee49c01710b21c3e67484325eeb28f','[\"*\"]',NULL,'2022-09-19 20:57:16','2022-09-19 20:57:16'),(6,'App\\Models\\User',23,'authToken','459a497155389034ef8d0123525b99fb9d5749f0be9d85d150d7fd6b50dd2c6b','[\"*\"]',NULL,'2022-09-19 20:57:57','2022-09-19 20:57:57'),(7,'App\\Models\\User',19,'authToken','dcfe6b60fc9d56f2910f2089af01acf4de0b9429b660075582bc4e6e81900a2a','[\"*\"]',NULL,'2022-09-19 20:58:19','2022-09-19 20:58:19'),(8,'App\\Models\\User',22,'authToken','9a16db1f7ae9476eb2c808b3c78ee8a2c82191e37bf19dd1660ff9a62cf83777','[\"*\"]',NULL,'2022-09-21 09:50:54','2022-09-21 09:50:54'),(9,'App\\Models\\User',22,'authToken','a7b5a73167857d7aa2e4230a5af49044848fd076fc84fcad38d1b0aca7783d85','[\"*\"]',NULL,'2022-09-21 09:51:27','2022-09-21 09:51:27'),(10,'App\\Models\\User',22,'authToken','702cdd58d303183778f8c9081f9884ee8e8f93a2b14a92d3bc69dc03c91aa5fa','[\"*\"]',NULL,'2022-09-21 09:53:46','2022-09-21 09:53:46'),(11,'App\\Models\\User',14,'authToken','81c1133028d9a8cc6aa0e41fd16471860e2fe9f738d4e5e13ba4dac5f232e24a','[\"*\"]',NULL,'2022-10-11 21:35:40','2022-10-11 21:35:40'),(12,'App\\Models\\User',14,'authToken','de6620a0c2a59781d413c43a57c242784d77f04bb1230831dd20af1df0404768','[\"*\"]',NULL,'2022-10-11 21:35:48','2022-10-11 21:35:48');
 
 /*Table structure for table `role_user` */
 
@@ -264,7 +342,7 @@ CREATE TABLE `role_user` (
 
 /*Data for the table `role_user` */
 
-insert  into `role_user`(`role_id`,`user_id`,`user_type`) values (1,1,'App\\Models\\User'),(1,21,'App\\Models\\User'),(2,3,'App\\Models\\User'),(2,4,'App\\Models\\User'),(2,11,'App\\Models\\User'),(2,12,'App\\Models\\User'),(2,13,'App\\Models\\User'),(2,20,'App\\Models\\User'),(3,5,'App\\Models\\User'),(3,7,'App\\Models\\User'),(3,8,'App\\Models\\User'),(3,14,'App\\Models\\User'),(3,15,'App\\Models\\User'),(3,16,'App\\Models\\User'),(3,17,'App\\Models\\User'),(4,6,'App\\Models\\User'),(4,9,'App\\Models\\User'),(4,10,'App\\Models\\User'),(4,18,'App\\Models\\User'),(4,19,'App\\Models\\User');
+insert  into `role_user`(`role_id`,`user_id`,`user_type`) values (1,21,'App\\Models\\User'),(1,22,'App\\Models\\User'),(1,23,'App\\Models\\User'),(2,3,'App\\Models\\User'),(2,4,'App\\Models\\User'),(2,11,'App\\Models\\User'),(2,12,'App\\Models\\User'),(2,13,'App\\Models\\User'),(2,20,'App\\Models\\User'),(3,5,'App\\Models\\User'),(3,7,'App\\Models\\User'),(3,8,'App\\Models\\User'),(3,14,'App\\Models\\User'),(3,15,'App\\Models\\User'),(3,16,'App\\Models\\User'),(3,17,'App\\Models\\User'),(3,24,'App\\Models\\User'),(4,6,'App\\Models\\User'),(4,9,'App\\Models\\User'),(4,10,'App\\Models\\User'),(4,18,'App\\Models\\User'),(4,19,'App\\Models\\User');
 
 /*Table structure for table `roles` */
 
@@ -284,6 +362,45 @@ CREATE TABLE `roles` (
 /*Data for the table `roles` */
 
 insert  into `roles`(`id`,`name`,`display_name`,`description`,`created_at`,`updated_at`) values (1,'superadmin','Superadmin','Superadmin','2022-09-09 10:37:11','2022-09-09 10:37:11'),(2,'admin','Admin','Admin','2022-09-09 10:37:11','2022-09-09 10:37:11'),(3,'teacher','Teacher','Teacher','2022-09-09 10:37:11','2022-09-09 10:37:11'),(4,'student','Student','Student','2022-09-09 10:37:11','2022-09-09 10:37:11');
+
+/*Table structure for table `scenario_mappings` */
+
+DROP TABLE IF EXISTS `scenario_mappings`;
+
+CREATE TABLE `scenario_mappings` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` bigint(20) DEFAULT NULL,
+  `hospital_id` bigint(20) DEFAULT NULL,
+  `scenarios_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+/*Data for the table `scenario_mappings` */
+
+insert  into `scenario_mappings`(`id`,`user_id`,`hospital_id`,`scenarios_id`,`created_at`,`updated_at`) values (6,22,1,'1','2022-09-19 07:37:37','2022-09-19 19:41:17'),(7,22,1,'2','2022-09-19 07:37:37','2022-09-19 07:37:37'),(8,22,1,'1','2022-10-06 11:43:17','2022-10-06 11:43:17'),(10,22,1,'1aa','2022-10-06 11:56:34','2022-10-06 11:56:34'),(13,22,2,'1aa','2022-10-11 07:53:41','2022-10-11 19:53:41');
+
+/*Table structure for table `scenarios` */
+
+DROP TABLE IF EXISTS `scenarios`;
+
+CREATE TABLE `scenarios` (
+  `id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` bigint(20) DEFAULT NULL,
+  `department_id` bigint(20) DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `path` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+/*Data for the table `scenarios` */
+
+insert  into `scenarios`(`id`,`user_id`,`department_id`,`name`,`path`,`file_name`,`deleted_at`,`created_at`,`updated_at`) values ('1aa',22,3,'Catherine Daniel','uploads/scenario/22/1665056094logo-dark.png','1665056094logo-dark.png',NULL,'2022-10-06 11:34:54','2022-10-06 11:34:54');
 
 /*Table structure for table `users` */
 
@@ -311,13 +428,14 @@ CREATE TABLE `users` (
   `deleted_at` datetime DEFAULT NULL,
   `updated_by` bigint(20) DEFAULT NULL,
   `unique_id` bigint(20) DEFAULT NULL,
+  `localization` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT 'en',
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `users` */
 
-insert  into `users`(`id`,`parent_id`,`hospitals_id`,`first_name`,`last_name`,`email`,`email_verified_at`,`password`,`password_show`,`address`,`city`,`phone_number`,`profile_picture`,`remember_token`,`created_at`,`updated_at`,`created_by`,`user_type`,`deleted_at`,`updated_by`,`unique_id`) values (1,0,NULL,'dawna','gill','dawngill08@gmail.com',NULL,'$2y$10$JMzjFe5R86F/MJmg6RB.J.sUdKw75GpW5rjTaE7SIhiUBycdDGXtq',NULL,'sad','sadas das','03412250984','blank.png',NULL,'2022-09-06 08:03:53','2022-09-09 11:30:34',NULL,NULL,NULL,NULL,NULL),(11,NULL,1,'Griffin','Forbes','poxucab@mailinator.com',NULL,'$2y$10$GZTkdujjPXHb0hei5a1YguRAXXYeynbGaFRjqQtpl8h.BnnSD8odq','aa',NULL,NULL,'+1 (702) 111-3664','blank.png',NULL,'2022-09-09 17:25:53','2022-09-09 17:33:02',1,'admin',NULL,1,85),(12,0,2,'Alma','Case','zopucagatu@mailinator.com',NULL,'$2y$10$a2uHNb0B8ZQdTnzylj1V.utRWlQ75jx112nuJHEgDdhyReanteoAO','aa',NULL,NULL,'+1 (958) 369-4194','blank.png',NULL,'2022-09-09 17:26:02','2022-09-09 17:26:02',1,'admin',NULL,NULL,16),(13,0,2,'Carson','Perez','liquqipu@mailinator.com',NULL,'$2y$10$s5ym1UllmIoANtudGttxfOg9ydbkSGPGeSSeb6armqTy1r8CS6KJK','a',NULL,NULL,'+1 (883) 188-1171','blank.png',NULL,'2022-09-09 17:27:32','2022-09-09 17:27:32',1,'admin',NULL,NULL,11),(14,11,1,'Lydia','David','ciciq@mailinator.com',NULL,'$2y$10$sJQzWpEg3cK1YrPHkeUQn.UGg0eXW.UXCMlu.6RpBUWGI8HNxFZiK','Pa$$w0rd!',NULL,NULL,'+1 (568) 783-1943','blank.png',NULL,'2022-09-09 17:28:41','2022-09-09 17:36:27',1,'teacher',NULL,1,98),(15,11,1,'Lois','Carr','damotyma@mailinator.com',NULL,'$2y$10$Kna1BeTygKEIql4bLEBhBew7ttoAXhfI4AoV6oDlCD7gbbEZk0e9.','Pa$$w0rd!',NULL,NULL,'+1 (853) 293-6672','blank.png',NULL,'2022-09-09 17:28:45','2022-09-09 17:33:02',1,'teacher',NULL,NULL,44),(16,12,2,'Arden','Rivera','dydatecu@mailinator.com',NULL,'$2y$10$e7kLEcxajUDhRdyVKIM5eeyuuDYYd73gM8etEUJzUEB4XAOLVHWge','Pa$$w0rd!',NULL,NULL,'+1 (257) 789-5272','blank.png',NULL,'2022-09-09 17:30:20','2022-09-09 17:30:20',1,'teacher',NULL,NULL,94),(17,12,2,'Yoshio','Anthony','tapafef@mailinator.com',NULL,'$2y$10$LHgOvzlvibA/mSNJCGpa9OgXmvk6lrHoA/FsnZcvJrFnpmJfFkSIa','Pa$$w0rd!',NULL,NULL,'+1 (108) 318-4408','blank.png',NULL,'2022-09-09 17:30:27','2022-09-09 17:30:27',1,'teacher',NULL,NULL,76),(18,15,1,'Lewis','Rivas','raxe@mailinator.com',NULL,'$2y$10$0c0UkrTlg8K1vZQl.foF8ezLdiv2hfRtMjW9Ce6PLjuLGkvHaS0uW','Pa$$w0rd!',NULL,NULL,'+1 (334) 709-7789','blank.png',NULL,'2022-09-09 17:32:13','2022-09-09 17:37:26',1,'student',NULL,1,57),(19,15,1,'Ali','Maxwell','ragimafup@mailinator.com',NULL,'$2y$10$MKhXqCsuELljh/MRTLaVEeA.RwVXWExKvc8mcMMt0mrZSZHLOf4MK','Pa$$w0rd!',NULL,NULL,'+1 (275) 891-5401','blank.png',NULL,'2022-09-09 17:32:22','2022-09-09 17:33:02',1,'student',NULL,NULL,84),(21,NULL,0,'Madonna','Greene','nopipilok@mailinator.com',NULL,'$2y$10$NHX2RE7f0oXTttMoG/xiY.eXnsHMNxwTvKZvTboGM1RKodFtJ3ljm','Pa$$w0rd!',NULL,NULL,'+1 (202) 791-6627','blank.png',NULL,'2022-09-09 18:03:12','2022-09-09 18:08:47',1,'superadmin',NULL,1,1622);
+insert  into `users`(`id`,`parent_id`,`hospitals_id`,`first_name`,`last_name`,`email`,`email_verified_at`,`password`,`password_show`,`address`,`city`,`phone_number`,`profile_picture`,`remember_token`,`created_at`,`updated_at`,`created_by`,`user_type`,`deleted_at`,`updated_by`,`unique_id`,`localization`) values (11,NULL,1,'Griffin','Forbes','poxucab@mailinator.com',NULL,'$2y$10$sZA3/ddpuFs.Qvk5iKKYTumRDpI0UmWliJPAbuCrp7m8bSYMEx9eC','aaa',NULL,NULL,'+1 (702) 111-3664','blank.png',NULL,'2022-09-09 17:25:53','2022-09-11 00:00:00',1,'admin',NULL,1,85,'en'),(12,0,2,'Alma','Case','zopucagatu@mailinator.com',NULL,'$2y$10$a2uHNb0B8ZQdTnzylj1V.utRWlQ75jx112nuJHEgDdhyReanteoAO','aa',NULL,NULL,'+1 (958) 369-4194','blank.png',NULL,'2022-09-09 17:26:02','2022-09-09 17:26:02',1,'admin',NULL,NULL,16,'en'),(13,0,2,'Carson','Perez','liquqipu@mailinator.com',NULL,'$2y$10$a2uHNb0B8ZQdTnzylj1V.utRWlQ75jx112nuJHEgDdhyReanteoAO','aa',NULL,NULL,'+1 (883) 188-1171','blank.png',NULL,'2022-09-09 17:27:32','2022-09-09 17:27:32',1,'admin',NULL,NULL,11,'en'),(14,11,1,'Lydia','David','ciciq@mailinator.com',NULL,'$2y$10$a2uHNb0B8ZQdTnzylj1V.utRWlQ75jx112nuJHEgDdhyReanteoAO','aa',NULL,NULL,'+1 (568) 783-1943','blank.png',NULL,'2022-09-09 17:28:41','2022-09-11 00:00:00',1,'teacher',NULL,1,983,'en'),(15,11,1,'Lois','Carr','damotyma@mailinator.com',NULL,'$2y$10$a2uHNb0B8ZQdTnzylj1V.utRWlQ75jx112nuJHEgDdhyReanteoAO','aa',NULL,NULL,'+1 (853) 293-6672','blank.png',NULL,'2022-09-09 17:28:45','2022-09-19 08:44:57',1,'teacher',NULL,NULL,44,'en'),(16,12,2,'Arden','Rivera','dydatecu@mailinator.com',NULL,'$2y$10$a2uHNb0B8ZQdTnzylj1V.utRWlQ75jx112nuJHEgDdhyReanteoAO','aa',NULL,NULL,'+1 (257) 789-5272','blank.png',NULL,'2022-09-09 17:30:20','2022-09-09 17:30:20',1,'teacher',NULL,NULL,94,'en'),(17,12,2,'Yoshio','Anthony','tapafef@mailinator.com',NULL,'$2y$10$a2uHNb0B8ZQdTnzylj1V.utRWlQ75jx112nuJHEgDdhyReanteoAO','aa',NULL,NULL,'+1 (108) 318-4408','blank.png',NULL,'2022-09-09 17:30:27','2022-09-09 17:30:27',1,'teacher',NULL,NULL,76,'en'),(18,15,1,'Lewis','Rivas','raxe@mailinator.com',NULL,'$2y$10$a2uHNb0B8ZQdTnzylj1V.utRWlQ75jx112nuJHEgDdhyReanteoAO','aa',NULL,NULL,'+1 (334) 709-7789','blank.png',NULL,'2022-09-09 17:32:13','2022-09-11 12:57:03',1,'student',NULL,1,57,'en'),(19,15,2,'Ali','Maxwell','ragimafup@mailinator.com',NULL,'$2y$10$a2uHNb0B8ZQdTnzylj1V.utRWlQ75jx112nuJHEgDdhyReanteoAO','aa',NULL,NULL,'+1 (275) 891-5401','blank.png',NULL,'2022-09-09 17:32:22','2022-09-11 12:57:03',1,'student',NULL,NULL,84,'en'),(21,NULL,0,'Madonna','Greene','nopipilok@mailinator.com',NULL,'$2y$10$a2uHNb0B8ZQdTnzylj1V.utRWlQ75jx112nuJHEgDdhyReanteoAO','aa',NULL,NULL,'+1 (202) 791-6627','blank.png',NULL,'2022-09-09 18:03:12','2022-09-11 13:05:47',1,'superadmin','2022-09-11 13:05:47',1,1621,'en'),(22,NULL,1,'dawn','gill','dawngill08@gmail.com',NULL,'$2y$10$a2uHNb0B8ZQdTnzylj1V.utRWlQ75jx112nuJHEgDdhyReanteoAO','aa',NULL,NULL,'+1 (202) 791-6627','blank.png',NULL,'2022-09-09 18:03:12','2022-09-24 12:59:32',1,'superadmin',NULL,1,1622,'en'),(23,0,0,'Pandora','Sykes','tera@mailinator.com',NULL,'$2y$10$a2uHNb0B8ZQdTnzylj1V.utRWlQ75jx112nuJHEgDdhyReanteoAO','aa',NULL,NULL,'+1 (409) 348-9114','blank.png',NULL,'2022-09-11 13:06:01','2022-09-11 13:06:01',22,'superadmin',NULL,NULL,9,'en'),(24,11,1,'vcc','cf','gfcgfcfg@gmail.com',NULL,'$2y$10$/yZ/QuT7QdH5GNYFp08rNuu5P.MctQ2n240evfTL9TYzzq7R4cMjW','aa',NULL,NULL,'cfc','blank.png',NULL,'2022-09-16 15:38:23','2022-09-16 15:38:23',11,'teacher',NULL,NULL,203212,'en');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

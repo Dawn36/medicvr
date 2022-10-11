@@ -116,5 +116,8 @@ return [
     'You Played'=>'שיחקת',
     'Your Average Score Is'=>'הציון הממוצע שלך הוא',
     'Your Best Score Is'=>'הציון הטוב ביותר שלך הוא',
+    'Total Score'=>'תוצאה סופית',
+    'Obtain Score'=>'השג ציון',
+    'Procedures'=>'נהלים'
     
 ];

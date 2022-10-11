@@ -189,8 +189,8 @@
                                         <td><a href="{{route('student_session_details',$session[$i]->id)}}" class="fw-bolder text-theme">{{ucwords($session[$i]->s_name)}}</a></td>
                                         <td>{{ucwords($session[$i]->d_name)}}</td>
                                         <td>{{$session[$i]->score}}</td>
-                                        <td>{{$session[$i]->time_taken}} Min</td>
-                                        <td>{{date("Y-m-d",strtotime($session[$i]->created_at))}}</td>
+                                        <td>{{convertSec($session[$i]->time_taken)}} </td>
+                                        <td>{{date("Y-m-d H:i:s",strtotime($session[$i]->created_at))}}</td>
                                     </tr>
                                     @endfor
                                 </tbody>

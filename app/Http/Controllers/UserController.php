@@ -215,7 +215,7 @@ class UserController extends Controller
                 GROUP BY d.`name`"));
                 //d.`deleted_at` IS NULL AND s.`deleted_at` IS NULL AND
             $session = DB::select(DB::raw("SELECT gs.`id`,s.`name` AS s_name,d.`name` AS d_name,gs.`score`,gs.`time_taken`,gs.`created_at` FROM `game_session` gs INNER JOIN `scenarios` s ON gs.`scenario_id`=s.`id`
-            INNER JOIN `departments` d ON d.`id`= s.`department_id` WHERE gs.`user_id`='$userId'"));
+            INNER JOIN `departments` d ON d.`id`= s.`department_id` WHERE gs.`user_id`='$userId' ORDER BY gs.`id` desc"));
             return view('student/student_show', compact('student','session','sessionDepartmentTab'));
         }
        
@@ -405,6 +405,9 @@ class UserController extends Controller
     }
     public function studentSessionDetails(int $id)
     {
+        $session=DB::table('game_session')->where('id',$id)->get();
+        $userId=$session[0]->user_id;
+        $userData = User::find($userId);
         $gameSessionQuestion=DB::table('game_session_question')->where('game_session_id',$id)->get();
         $gameSessionProcedure=DB::table('game_session_procedure')->where('game_session_id',$id)->get();
         $aveScore=DB::table('game_session_question')
@@ -412,7 +415,7 @@ class UserController extends Controller
         ->where('game_session_id', $id)->get();
         $scenariosName = DB::select(DB::raw("SELECT s.`name`  FROM `game_session` gs INNER JOIN `scenarios` s ON gs.`scenario_id`=s.`id`
              WHERE gs.`id`='$id'"));
-        return view('student/student_session_details',compact('scenariosName','aveScore','gameSessionQuestion','gameSessionProcedure'));
+        return view('student/student_session_details',compact('scenariosName','aveScore','gameSessionQuestion','gameSessionProcedure','userData'));
     }
     
 }

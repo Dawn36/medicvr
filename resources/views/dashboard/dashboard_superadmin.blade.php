@@ -94,10 +94,11 @@
                                         <p class="box-title mb-0">{{__("dashboard.Hours Played")}}</p>
                                     </div>
                                     <div class="box-data">
-                                        <p class="bx-value mb-0">{{$data['hospital_listing'][$i]->sessions_played}} <small>{{__("dashboard.hrs")}}</small></p>
+                                        <p class="bx-value mb-0">{{convertSec($data['hospital_listing'][$i]->hours_played)}} <small></small></p>
                                     </div>
                                 </div>
                             </div>
+                            {{-- {{__("dashboard.hrs")}} --}}
                             <div class="col">
                                 <div class="white-box analytics-info">
                                     <div class="d-flex">
@@ -139,7 +140,7 @@
             @endfor
         </div>
 
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-md-12 col-lg-12 col-sm-12">
                 <div class="data-table-wrapper">
                     <div class="d-flex align-items-center justify-content-between nav-tab-heading">
@@ -298,7 +299,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
 <!-- ============================================================== -->

@@ -10,6 +10,7 @@
                 <div class="d-flex align-items-center justify-content-between py-4 nav-tab-heading">
                     <h4 class="heading mb-0">{{__('gobal.Session Details')}}</h4>
                 </div>
+                <p>{{ucwords($userData->first_name)}} {{ucwords($userData->last_name)}}</p>
             </div>
         </div>
         <div class="row">
@@ -56,7 +57,8 @@
                                     <tr>
                                         <th scope="col" class="border-top-0 fw-bold fs-4 text-dark">#</th>
                                         <th scope="col" class="border-top-0 fw-bold fs-4 text-dark w-50">{{__('gobal.Questions')}}</th>
-                                        <th scope="col" class="border-top-0 fw-bold fs-4 text-dark">{{__('gobal.Score')}}</th>
+                                        <th scope="col" class="border-top-0 fw-bold fs-4 text-dark">{{__('gobal.Total Score')}}</th>
+                                        <th scope="col" class="border-top-0 fw-bold fs-4 text-dark">{{__('gobal.Obtain Score')}}</th>
                                         <th scope="col" class="border-top-0 fw-bold fs-4 text-dark">{{__('gobal.Date')}}</th>
                                     </tr>
                                 </thead>
@@ -66,6 +68,7 @@
                                     <tr>
                                         <td scope="row">{{$a}}</td>
                                         <td>{{ucfirst($gameSessionQuestion[$i]->question)}}</td>
+                                        <td>{{$gameSessionQuestion[$i]->total_score}}</td>
                                         <td>{{$gameSessionQuestion[$i]->score}}</td>
                                         <td>{{DATE("Y-m-d",strtotime($gameSessionQuestion[$i]->created_at))}}</td>
                                     </tr>
