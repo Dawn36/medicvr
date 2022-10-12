@@ -94,8 +94,8 @@
                                         <p class="box-title mb-0">{{__("dashboard.Hours Played")}}</p>
                                     </div>
                                     <div class="box-data">
-                                        @php 
-                                        $time=explode(convertSec($data['hospital_listing'][$i]->hours_played) , ":");
+                                        @php
+                                        $time=explode(":",convertSec($data['hospital_listing'][$i]->hours_played)); 
                                         @endphp
                                         <p class="bx-value mb-0">{{$time[0]}} <small>{{__("dashboard.hrs")}}</small></p>
                                     </div>
