@@ -118,5 +118,8 @@ return [
     'Your Best Score Is'=>'Your Best Score Is',
     'Total Score'=>'Total Score',
     'Obtain Score'=>'Obtain Score',
-    'Procedures'=>'Procedures'
+    'Procedures'=>'Procedures',
+    'Session Score'=>'Session Score',
+    'Question Best Score'=>'Question Best Score',
+    'Question Average Score'=>'Question Average Score',
 ];

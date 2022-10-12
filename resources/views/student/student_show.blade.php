@@ -163,7 +163,43 @@
                 </div>
             </div>
             <div class="tab-pane fade covid" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h1 class="fw-bold">{{__('gobal.Session Score')}}</h1>
+                    </div>
+                </div>
+                @php 
+                $sessionArrScore=array();
+                for ($k=0; $k < count($session) ; $k++) {
+                    array_push($sessionArrScore,  $session[$k]->score);
+                }
+                @endphp
+                <div class="row justify-content-center">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="white-box analytics-info">
+                            <div class="d-flex">
+                                <img src="{{ asset('theme/assets/imges/award.svg')}}" class="sidebar-icon custom-widgets-icon bg-white border" alt="">
+                                <p class="box-title mb-0">{{__('gobal.Best Score')}}</p>
+                            </div>
+                            <div class="box-data">
+                                <p class="bx-value mb-0">{{max($sessionArrScore)}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="white-box analytics-info">
+                            <div class="d-flex">
+                                <img src="{{ asset('theme/assets/imges/calculator.svg')}}" class="sidebar-icon custom-widgets-icon bg-white border" alt="">
+                                <p class="box-title mb-0">{{__('gobal.Average Score')}}</p>
+                            </div>
+                            <div class="box-data">
+                                <p class="bx-value mb-0">{{number_format(array_sum($sessionArrScore)/count($session),2)}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="gernal-info bg-white">
+                 
                     <div class="block">
                         <div class="d-flex justify-content-between">
                             <h3 class="heading">{{__('gobal.Session')}}</h3>
@@ -264,7 +300,7 @@
                                                                                 array_push($dataArrScore,  $data[$k]->score);
                                                                             }
                                                                             @endphp
-                                                                            <p class="bx-value mb-0">{{array_sum($dataArrTime)}} min Times</p>
+                                                                            <p class="bx-value mb-0">{{convertSec(array_sum($dataArrTime))}} Times</p>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -312,7 +348,7 @@
                                                                                     <td><a href="{{route('student_session_details',$data[$k]->id)}}" class="fw-bolder text-theme">{{ucwords($data[$k]->s_name)}}</a></td>
                                                                                     <td><a href="{{route('student_session_details',$data[$k]->id)}}" class="fw-bolder text-theme">{{ucwords($data[$k]->d_name)}}</a></td>
                                                                                     <td>{{$data[$k]->score}}</td>
-                                                                                    <td>{{$data[$k]->time_taken}} mins</td>
+                                                                                    <td>{{convertSec($data[$k]->time_taken)}}</td>
                                                                                     <td>{{Date("Y-m-d",strtotime($data[$k]->created_at))}}</td>
                                                                                 </tr>
                                                                                 @endfor

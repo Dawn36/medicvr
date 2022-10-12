@@ -118,6 +118,10 @@ return [
     'Your Best Score Is'=>'הציון הטוב ביותר שלך הוא',
     'Total Score'=>'תוצאה סופית',
     'Obtain Score'=>'השג ציון',
-    'Procedures'=>'נהלים'
+    'Procedures'=>'נהלים',
+    'Session Score'=>'ציון הפעלה',
+    'Question Best Score'=>'שאלה הציון הטוב ביותר',
+    'Question Average Score'=>'ציון ממוצע של שאלה',
+
     
 ];

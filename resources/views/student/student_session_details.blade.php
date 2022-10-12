@@ -24,7 +24,7 @@
                 <div class="white-box analytics-info">
                     <div class="d-flex">
                         <img src="{{ asset('theme/assets/imges/award.svg')}}" class="sidebar-icon custom-widgets-icon bg-white border" alt="">
-                        <p class="box-title mb-0">{{__('gobal.Best Score')}}</p>
+                        <p class="box-title mb-0">{{__('gobal.Question Best Score')}}</p>
                     </div>
                     <div class="box-data">
                         <p class="bx-value mb-0">{{$aveScore[0]->max_score}}</p>
@@ -35,7 +35,7 @@
                 <div class="white-box analytics-info">
                     <div class="d-flex">
                         <img src="{{ asset('theme/assets/imges/calculator.svg')}}" class="sidebar-icon custom-widgets-icon bg-white border" alt="">
-                        <p class="box-title mb-0">{{__('gobal.Average Score')}}</p>
+                        <p class="box-title mb-0">{{__('gobal.Question Average Score')}}</p>
                     </div>
                     <div class="box-data">
                         <p class="bx-value mb-0">{{$aveScore[0]->avg_score}}</p>
@@ -101,7 +101,7 @@
                                     <tr>
                                         <td scope="row">{{$a}}</td>
                                         <td>{{ucfirst($gameSessionProcedure[$i]->procedure)}}</td>
-                                        <td>{{$gameSessionProcedure[$i]->time}}</td>
+                                        <td>{{convertSec($gameSessionProcedure[$i]->time)}}</td>
                                         {{-- <td>{{DATE("Y-m-d",strtotime($gameSessionProcedure[$i]->created_at))}}</td> --}}
                                     </tr>
                                    @endfor
