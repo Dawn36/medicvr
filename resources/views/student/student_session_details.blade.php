@@ -59,7 +59,7 @@
                                         <th scope="col" class="border-top-0 fw-bold fs-4 text-dark w-50">{{__('gobal.Questions')}}</th>
                                         <th scope="col" class="border-top-0 fw-bold fs-4 text-dark">{{__('gobal.Total Score')}}</th>
                                         <th scope="col" class="border-top-0 fw-bold fs-4 text-dark">{{__('gobal.Obtain Score')}}</th>
-                                        <th scope="col" class="border-top-0 fw-bold fs-4 text-dark">{{__('gobal.Date')}}</th>
+                                        {{-- <th scope="col" class="border-top-0 fw-bold fs-4 text-dark">{{__('gobal.Date')}}</th> --}}
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -70,7 +70,7 @@
                                         <td>{{ucfirst($gameSessionQuestion[$i]->question)}}</td>
                                         <td>{{$gameSessionQuestion[$i]->total_score}}</td>
                                         <td>{{$gameSessionQuestion[$i]->score}}</td>
-                                        <td>{{DATE("Y-m-d",strtotime($gameSessionQuestion[$i]->created_at))}}</td>
+                                        {{-- <td>{{DATE("Y-m-d",strtotime($gameSessionQuestion[$i]->created_at))}}</td> --}}
                                     </tr>
                                     @endfor
                                 </tbody>
@@ -92,7 +92,7 @@
                                         <th scope="col" class="border-top-0 fw-bold fs-4 text-dark">#</th>
                                         <th scope="col" class="border-top-0 fw-bold fs-4 text-dark w-50">{{__('gobal.Procedures')}}</th>
                                         <th scope="col" class="border-top-0 fw-bold fs-4 text-dark">{{__('gobal.Time')}}</th>
-                                        <th scope="col" class="border-top-0 fw-bold fs-4 text-dark">{{__('gobal.Date')}}</th>
+                                        {{-- <th scope="col" class="border-top-0 fw-bold fs-4 text-dark">{{__('gobal.Date')}}</th> --}}
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -102,7 +102,7 @@
                                         <td scope="row">{{$a}}</td>
                                         <td>{{ucfirst($gameSessionProcedure[$i]->procedure)}}</td>
                                         <td>{{$gameSessionProcedure[$i]->time}}</td>
-                                        <td>{{DATE("Y-m-d",strtotime($gameSessionProcedure[$i]->created_at))}}</td>
+                                        {{-- <td>{{DATE("Y-m-d",strtotime($gameSessionProcedure[$i]->created_at))}}</td> --}}
                                     </tr>
                                    @endfor
                                 </tbody>
