@@ -9,8 +9,8 @@
             <div class="tab-pane fade Student-card covid active show" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                 <div class="d-flex align-items-center justify-content-between py-4 nav-tab-heading">
                     <h4 class="heading mb-0">{{__('gobal.Session Details')}}</h4>
+                    <h4 class="heading mb-0">{{ucwords($userData->first_name)}} {{ucwords($userData->last_name)}}</h4>
                 </div>
-                <p>{{ucwords($userData->first_name)}} {{ucwords($userData->last_name)}}</p>
             </div>
         </div>
         <div class="row">
