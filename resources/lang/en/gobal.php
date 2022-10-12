@@ -122,4 +122,5 @@ return [
     'Session Score'=>'Session Score',
     'Question Best Score'=>'Question Best Score',
     'Question Average Score'=>'Question Average Score',
+    'Student'=>'Student',
 ];

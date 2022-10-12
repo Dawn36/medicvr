@@ -122,6 +122,7 @@ return [
     'Session Score'=>'ציון הפעלה',
     'Question Best Score'=>'שאלה הציון הטוב ביותר',
     'Question Average Score'=>'ציון ממוצע של שאלה',
+    'Student'=>'סטוּדֶנט',
 
     
 ];

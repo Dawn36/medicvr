@@ -9,14 +9,14 @@
             <div class="tab-pane fade Student-card covid active show" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                 <div class="d-flex align-items-center justify-content-between py-4 nav-tab-heading">
                     <h4 class="heading mb-0">{{__('gobal.Session Details')}}</h4>
-                    <h4 class="heading mb-0">{{ucwords($userData->first_name)}} {{ucwords($userData->last_name)}}</h4>
+                    <h4 class="heading mb-0">{{ucwords($scenariosName[0]->name)}}</h4>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-12 text-center">
-                <small class="fw-bold">{{__('gobal.Scenrio Name')}}</small>
-                <h1 class="title fw-bold">{{ucwords($scenariosName[0]->name)}}</h1>
+                <small class="fw-bold">{{__('gobal.Student')}}</small>
+                <h1 class="title fw-bold">{{ucwords($userData->first_name)}} {{ucwords($userData->last_name)}}</h1>
             </div>
         </div>
         <div class="row justify-content-center">
