@@ -22,19 +22,19 @@
                                     <input type="text" name="first_name" value="{{$teacher->first_name}}" placeholder="{{__('gobal.first_name_placeholder')}}" class="form-control" required>
                                 </div>
                                 <div class="col-md-6 pb-2">
-                                    <label>{{__('gobal.last_name')}}Last Name<span class="required">*</span></label>
+                                    <label>{{__('gobal.last_name')}}<span class="required">*</span></label>
                                     <input type="text" name="last_name"  value="{{$teacher->last_name}}" placeholder="{{__('gobal.last_name_placeholder')}}" class="form-control" required>
                                 </div>
                                 <div class="col-md-6 pb-2">
-                                    <label>{{__('gobal.phone')}}Phone<span class="required">*</span></label>
+                                    <label>{{__('gobal.phone')}}<span class="required">*</span></label>
                                     <input type="tel" name="phone_number" value="{{$teacher->phone_number}}" placeholder="{{__('gobal.phone_placeholder')}}" class="form-control" required>
                                 </div>
                                 <div class="col-md-6 pb-2">
-                                    <label>{{__('gobal.email')}}Email<span class="required">*</span></label>
+                                    <label>{{__('gobal.email')}}<span class="required">*</span></label>
                                     <input type="email" name="email" value="{{$teacher->email}}" placeholder="{{__('gobal.email_placeholder')}}" class="form-control" required>
                                 </div>
                                 <div class="col-md-6 pb-2">
-                                    <label>{{__('gobal.unique_id')}}Unique ID<span class="required">*</span></label>
+                                    <label>{{__('gobal.unique_id')}}<span class="required">*</span></label>
                                     <input type="number" name="unique_id" value="{{$teacher->unique_id}}" placeholder="{{__('gobal.unique_id_placeholder')}}" class="form-control" required>
                                 </div>
                                 <div class="col-md-6 pb-2">

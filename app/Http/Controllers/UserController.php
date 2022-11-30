@@ -88,7 +88,8 @@ class UserController extends Controller
             if($status == 'student')
             {
                 $teacher=User::whereRoleIs('teacher')->get();
-                return view('student/student_create',compact('teacher'));
+                $hospitals=Hospitals::get();
+                return view('student/student_create',compact('teacher','hospitals'));
             }
             if($status == 'superadmin')
             {
@@ -256,7 +257,8 @@ class UserController extends Controller
         {
             $student=User::find($userId);
             $teacher=User::whereRoleIs('teacher')->get();
-            return view('student/student_edit',compact('student','teacher'));
+            $hospitals=Hospitals::get();
+            return view('student/student_edit',compact('student','teacher','hospitals'));
         }
         if($status == 'superadmin')
         {
@@ -416,6 +418,11 @@ class UserController extends Controller
         $scenariosName = DB::select(DB::raw("SELECT s.`name`  FROM `game_session` gs INNER JOIN `scenarios` s ON gs.`scenario_id`=s.`id`
              WHERE gs.`id`='$id'"));
         return view('student/student_session_details',compact('scenariosName','aveScore','gameSessionQuestion','gameSessionProcedure','userData'));
+    }
+    public function hospitalTeacher(Request $request)
+    {
+        $hospitalId=$request->hospitalId;
+        return User::where('hospitals_id',$hospitalId)->whereRoleIs('teacher')->get();
     }
     
 }

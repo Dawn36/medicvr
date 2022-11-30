@@ -54,6 +54,7 @@ Route::Get('teacher/{status}', [UserController::class, 'index'])->name('teacher'
 Route::Get('teacher_create/{status}', [UserController::class, 'create'])->name('teacher_create');
 Route::Get('teacher_edit/{status}/{userId}', [UserController::class, 'edit'])->name('teacher_edit');
 Route::Post('teacher_show', [UserController::class, 'show'])->name('teacher_show');
+Route::Get('hospital_teacher', [UserController::class, 'hospitalTeacher'])->name('hospital_teacher');
 
 //Student
 Route::Get('student/{status}', [UserController::class, 'index'])->name('student');

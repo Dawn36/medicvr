@@ -31,7 +31,7 @@
                                     <p class="text-dark">{{ucwords($teacher->last_name)}}</p>
                                 </div>
                                 <div class="col-md-6 pb-2">
-                                    <label class="fw-bold">{{__('gobal.Hospital Name')}}</label>
+                                    <label class="fw-bold">{{__('gobal.hospital_name')}}</label>
                                     <p class="text-dark">{{ucwords($teacher->hospitals->hospital_name)}}</p>
                                 </div>
                                 <div class="col-md-6 pb-2">

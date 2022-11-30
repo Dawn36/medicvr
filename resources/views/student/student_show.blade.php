@@ -182,7 +182,11 @@
                                 <p class="box-title mb-0">{{__('gobal.Best Score')}}</p>
                             </div>
                             <div class="box-data">
+                                @if(count($sessionArrScore) > 0)
                                 <p class="bx-value mb-0">{{max($sessionArrScore)}}</p>
+                                @else
+                                <p class="bx-value mb-0">0</p>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -193,7 +197,11 @@
                                 <p class="box-title mb-0">{{__('gobal.Average Score')}}</p>
                             </div>
                             <div class="box-data">
+                                @if(count($sessionArrScore) > 0)
                                 <p class="bx-value mb-0">{{number_format(array_sum($sessionArrScore)/count($session),2)}}</p>
+                                @else
+                                <p class="bx-value mb-0">0</p>
+                                @endif
                             </div>
                         </div>
                     </div>

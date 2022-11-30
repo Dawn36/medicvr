@@ -37,9 +37,19 @@
                                     <label>{{__('gobal.unique_id')}}<span class="required">*</span></label>
                                     <input type="number" name="unique_id" value="{{$student->unique_id}}" placeholder="{{__('gobal.unique_id_placeholder')}}" class="form-control" required>
                                 </div>
+                                @if(Auth::user()->hasRole('superadmin'))
+                                <div class="col-md-6 pb-2">
+                                    <label>{{__('gobal.hospital')}}<span class="required">*</span></label>
+                                    <select id="hospital_id" class="form-control" required onchange="getTeacher()">
+                                        @for ($i = 0; $i < count($hospitals); $i++)
+                                        <option value="{{$hospitals[$i]->id}}" {{$student->hospitals_id == $hospitals[$i]->id ? "selected" : "" }}>{{ucwords($hospitals[$i]->hospital_name)}} </option>
+                                        @endfor
+                                    </select>
+                                </div>
+                                @endif
                                 <div class="col-md-6 pb-2">
                                     <label>{{__('gobal.Teacher')}}<span class="required">*</span></label>
-                                    <select name="parent_id" class="form-control" required>
+                                    <select name="parent_id" id="parent_id" class="form-control" required>
                                         @for ($i = 0; $i < count($teacher); $i++)
                                         <option value="{{$teacher[$i]->id}}" {{$student->parent_id == $teacher[$i]->id ? "selected" : "" }} >{{ucwords($teacher[$i]->first_name)}} {{ucwords($teacher[$i]->last_name)}}</option>
                                         @endfor
@@ -60,4 +70,33 @@
         </div>
     </div>
 </div>
+<script>
+    @if(Auth::user()->hasRole('superadmin'))
+  getTeacher();
+  @endif
+  function getTeacher()
+  {
+      hospitalId = $('#hospital_id').val()
+      let value = {
+          hospitalId: hospitalId,
+      };
+      $.ajax({
+          type: 'GET',
+          url: "{{ route('hospital_teacher') }}",
+          data: value,
+          success: function(result) {
+              document.getElementById('parent_id').innerHTML ='';
+              for (var i = 0; i < result.length; i++) {
+                  var opt = document.createElement('option');
+                  opt.value = result[i].id;
+                  opt.innerHTML = result[i].first_name+" "+result[i].last_name;
+                  if (result[i].id == "{{ $student->parent_id }}") opt.defaultSelected =
+                        true;
+                  document.getElementById('parent_id').appendChild(opt);
+              }
+
+          }
+      });
+  }
+  </script>
 @endsection('content')
