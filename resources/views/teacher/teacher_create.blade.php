@@ -17,19 +17,19 @@
                             <input hidden name='role_id' value="teacher"/>
                             <div class="row pb-2">
                                 <div class="col-md-6 pb-2">
-                                    <label>{{__('gobal.first_name')}}First Name<span class="required">*</span></label>
+                                    <label>{{__('gobal.first_name')}}<span class="required">*</span></label>
                                     <input type="text" name="first_name" placeholder="{{__('gobal.first_name_placeholder')}}" class="form-control" required>
                                 </div>
                                 <div class="col-md-6 pb-2">
-                                    <label>{{__('gobal.last_name')}}Last Name<span class="required">*</span></label>
+                                    <label>{{__('gobal.last_name')}}<span class="required">*</span></label>
                                     <input type="text" name="last_name" placeholder="{{__('gobal.last_name_placeholder')}}" class="form-control" required>
                                 </div>
                                 <div class="col-md-6 pb-2">
-                                    <label>{{__('gobal.phone')}}Phone<span class="required">*</span></label>
+                                    <label>{{__('gobal.phone')}}<span class="required">*</span></label>
                                     <input type="tel" name="phone_number" placeholder="{{__('gobal.phone_placeholder')}}" class="form-control" required>
                                 </div>
                                 <div class="col-md-6 pb-2">
-                                    <label>{{__('gobal.email')}}Email<span class="required">*</span></label>
+                                    <label>{{__('gobal.email')}}<span class="required">*</span></label>
                                     <input type="email" name="email" placeholder="{{__('gobal.email_placeholder')}}" class="form-control" required>
                                 </div>
                                 <div class="col-md-6 pb-2">
