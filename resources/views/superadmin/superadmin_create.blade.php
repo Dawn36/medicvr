@@ -31,10 +31,16 @@
                                 <div class="col-md-6 pb-2">
                                     <label>{{__('gobal.email')}}<span class="required">*</span></label>
                                     <input type="email" name="email" placeholder="{{__('gobal.email_placeholder')}}" class="form-control" required>
+                                    @if($errors->has('email'))
+                                    <div class="error" style="color: red"><b>{{ $errors->first('email') }}</b></div>
+                                    @endif
                                 </div>
                                 <div class="col-md-6 pb-2">
                                     <label>{{__('gobal.unique_id')}}<span class="required">*</span></label>
                                     <input type="number" name="unique_id" placeholder="{{__('gobal.unique_id_placeholder')}}" class="form-control" required>
+                                    @if($errors->has('unique_id'))
+                                    <div class="error" style="color: red"><b>{{ $errors->first('unique_id') }}</b></div>
+                                    @endif
                                 </div>
                                 <input hidden name='hospitals_id' value="0"/>
                                 <input hidden name='parent_id' value="0"/>

@@ -131,9 +131,10 @@ class UserController extends Controller
         $request->validate([
             'first_name' => ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,deleted_at,NULL'],
-            
+            'email' => ['required', 'string', 'email', 'max:255','unique:users', 'unique:users,deleted_at,NULL'],
+            'unique_id' => ['required', 'unique:users', 'unique:users,deleted_at,NULL'],
         ]);
+
         if($roleId == 'teacher')
         {
             $userId=$request->parent_id;
@@ -306,6 +307,8 @@ class UserController extends Controller
         $request->validate([
             'first_name' => ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255','unique:users,email,'.$id ],
+            'unique_id' => ['required', 'unique:users,unique_id,'.$id ],
         ]);
 
         $user = User::find($id);
