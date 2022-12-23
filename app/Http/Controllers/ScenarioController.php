@@ -116,7 +116,7 @@ class ScenarioController extends Controller
      * @param  \App\Models\Scenario  $scenario
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, int $id)
+    public function update(Request $request, string $id)
     {
         $userId=Auth::user()->id;
         $scenario = Scenario::find($id);
